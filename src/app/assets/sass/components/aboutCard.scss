@@ -67,6 +67,7 @@
       background: hsla(67, 95%, 95%, 1);
       border: solid 5px hsla(39, 100%, 50%, 1);
       position: relative;
+
       &::after {
         content: '';
         position: absolute;
