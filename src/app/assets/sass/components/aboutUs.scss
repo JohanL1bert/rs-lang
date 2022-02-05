@@ -1,7 +1,6 @@
 .about {
-  &__inner {
-  }
-
-  &__items {
+  &__developers {
+    display: flex;
+    justify-content: space-around;
   }
 }
