@@ -1,5 +1,4 @@
 .footer {
-  
   &__inner {
     height: 90px;
     background-color: #ff4656;
@@ -21,7 +20,7 @@
     align-items: center;
 
     &__image {
-      background-image: url('../images/svg/github.svg');
+      background-image: url('../../images/svg/github.svg');
       background-repeat: no-repeat;
       background-size: cover;
       width: 50px;
@@ -66,7 +65,7 @@
     width: 140px;
 
     &__school {
-      background-image: url('../images/svg/rs_school_js.svg');
+      background-image: url('../../images/svg/rs_school_js.svg');
       background-repeat: no-repeat;
       background-size: contain;
       width: 100%;
