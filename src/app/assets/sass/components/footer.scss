@@ -1,9 +1,11 @@
 .footer {
+  
   &__inner {
     height: 90px;
     background-color: #ff4656;
     color: #f5deb3;
   }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -12,14 +14,12 @@
     padding-right: 20px;
     height: 100%;
   }
-  &__copyright {
-    &__year {
-    }
-  }
+
   &__developer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     &__image {
       background-image: url('../images/svg/github.svg');
       background-repeat: no-repeat;
@@ -28,14 +28,17 @@
       height: 50px;
       padding: 5px;
     }
+
     &__items {
       padding-left: 10px;
       list-style-type: none;
       margin: 0;
     }
+
     &__item {
       padding: 3px;
     }
+
     &__link {
       color: #f5deb3;
       text-decoration: none;
@@ -55,11 +58,13 @@
       }
     }
   }
+
   &__logo {
     height: 100%;
     display: flex;
     align-items: center;
     width: 140px;
+
     &__school {
       background-image: url('../images/svg/rs_school_js.svg');
       background-repeat: no-repeat;
