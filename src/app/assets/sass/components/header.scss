@@ -1,0 +1,35 @@
+.header {
+  height: 50px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__nav {
+    display: flex;
+
+    &_link {
+      position: relative;
+      margin: 0 10px;
+    }
+
+    & a {
+      color: $color-black;
+    }
+
+    &_link:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: $color-black;
+      transition: width 0.3s ease-out;
+    }
+
+    &_link:hover:after {
+      width: 100%;
+    }
+  }
+}
