@@ -1,0 +1,135 @@
+.header {
+  height: 50px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $screen-sm) {
+    padding: 0 20px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+  }
+
+  &__menu-icon {
+    display: none;
+
+    @media (max-width: $screen-sm) {
+      position: relative;
+      width: 24px;
+      height: 18px;
+      display: block;
+      z-index: 5;
+      cursor: pointer;
+
+      & span,
+      &::before,
+      &::after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        transition: all 0.3s ease 0s;
+        background-color: $color-black;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      & span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+      }
+    }
+  }
+
+  &__menu-icon_active {
+    & span {
+      transform: scale(0) translate(0px, -50%);
+    }
+
+    &::before {
+      top: 50%;
+      transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    &::after {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0px, 50%);
+    }
+  }
+
+  &__nav {
+    @media (max-width: $screen-sm) {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      background-color: $color-white;
+      z-index: 2;
+      transform: translate(-100%, -100%);
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  &__nav_active {
+    transform: translate(0, 0);
+  }
+
+  &__nav ul {
+    display: flex;
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+    }
+
+    & a {
+      color: $color-black;
+    }
+  }
+
+  &__nav_link {
+    position: relative;
+    margin: 0 10px;
+
+    @media (max-width: $screen-sm) {
+      margin: 10px 0;
+      font-size: $fontSize-md;
+    }
+  }
+
+  &__nav_link:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: $color-black;
+    transition: width 0.3s ease-out;
+
+    @media (max-width: $screen-sm) {
+      display: none;
+    }
+  }
+
+  &__nav_link:hover:after {
+    width: 100%;
+  }
+}
