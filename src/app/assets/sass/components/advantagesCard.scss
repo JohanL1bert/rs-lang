@@ -56,3 +56,28 @@
     background-color: #deffee;
   }
 }
+
+@media (max-width: $screen-sm) {
+  .advantages {
+    &__section {
+      &__card {
+        width: 100%;
+      }
+
+      &__text {
+        width: 200px;
+        margin-left: 150px;
+      }
+    }
+
+    &__rectangle {
+      display: none;
+    }
+
+    &__card {
+      &:nth-child(n) {
+        margin: 0;
+      }
+    }
+  }
+}
