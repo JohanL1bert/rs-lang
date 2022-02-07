@@ -1,22 +1,23 @@
-import React from 'react';
-
-const levels = [
-  { title: 'Beginner', char: 'A1' },
-  { title: 'Elementary', char: 'A2' },
-  { title: 'Intermediate', char: 'B1' },
-  { title: 'Upper Intermediate', char: 'B2' },
-  { title: 'Advanced', char: 'C1' },
-  { title: 'Proficiency', char: 'C2' },
-];
+import React, { useState } from 'react';
+import { levels } from 'common/const/textbook.const';
 
 export const LevelSwitch: React.FC = () => {
+  const [level, setLevel] = useState<string>('A1');
+
+  const changeLevel = (lv: string) => setLevel(lv);
+
   return (
     <div className="level-switch">
-      {levels.map((level, index) => {
+      {levels.map((lv, index) => {
         return (
-          <div key={index}>
-            <span>{level.char}</span>
-            <span>{level.title}</span>
+          <div
+            key={index}
+            className={lv.char === level ? 'level-switch__item' : 'level-switch__item level-switch__item_disabled'}
+            onClick={() => changeLevel(lv.char)}
+          >
+            <div className="level-switch__item_circle"></div>
+            <span className="level-switch__item_char">{lv.char}</span>
+            <span className="level-switch__item_title">{lv.title}</span>
           </div>
         );
       })}
