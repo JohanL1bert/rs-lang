@@ -1,0 +1,107 @@
+.advantages {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__rectangle {
+    display: inline-block;
+    margin-top: 150px;
+    position: absolute;
+    width: 100%;
+    width: 1047px;
+    height: 619px;
+
+    background: #f4f9ff;
+    border-radius: 150px 0px 0px 0px;
+    z-index: -1;
+  }
+
+  &__section {
+    &__card {
+      display: flex;
+      justify-content: space-around;
+      width: 714px;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    &__text {
+      max-height: 900px;
+      width: 419px;
+    }
+  }
+
+  &__inner__text {
+    position: absolute;
+    top: 25%;
+  }
+
+  &__text {
+    &__figure {
+      position: absolute;
+      width: 178px;
+      height: 178px;
+      z-index: -1;
+      top: -35px;
+      left: -55px;
+      background: #fff5db;
+      border-radius: 0px 0px 100px 0px;
+      transform: rotate(-180deg);
+    }
+
+    &__dots {
+      position: absolute;
+      top: 400px;
+      width: 405px;
+      height: 155px;
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    &__elipse {
+      display: inline-block;
+      position: relative;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #e7f0fc;
+      z-index: -2;
+    }
+  }
+}
+
+@media (max-width: 1900px) {
+  .advantages {
+    &__rectangle {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1134px) {
+  .advantages {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__text {
+      &__dots {
+        display: none;
+      }
+    }
+
+    &__section {
+      &__text {
+        height: 500px;
+      }
+    }
+  }
+}
