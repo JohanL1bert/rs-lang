@@ -1,0 +1,146 @@
+.level-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+
+  @media (max-width: 840px) {
+    column-gap: 10px;
+  }
+
+  &__item {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: $color-gray;
+    font-size: $fontSize-md;
+    overflow: hidden;
+    cursor: pointer;
+
+    @media (max-width: 1320px) {
+      width: 100px;
+    }
+
+    @media (max-width: $screen-md) {
+      width: 110px;
+      padding-left: 10px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    @media (max-width: 840px) {
+      max-width: 110px;
+    }
+
+    @media (max-width: 450px) {
+      height: 40px;
+    }
+
+    & span {
+      z-index: 1;
+    }
+
+    &_circle {
+      position: absolute;
+      top: -45px;
+      left: -90px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+
+      @media (max-width: 1320px) {
+        left: -10px;
+      }
+    }
+
+    &_char {
+      margin-left: 14px;
+      font-family: $fontFamily-Gilroy-Semibold;
+      font-size: $fontSize-lg;
+      font-weight: bold;
+
+      @media (max-width: $screen-md) {
+        margin-left: 0;
+      }
+
+      @media (max-width: 840px) {
+        width: 100%;
+        text-align: center;
+      }
+
+      @media (max-width: 450px) {
+        font-size: $fontSize-xs;
+      }
+    }
+
+    &:nth-child(1) &_circle {
+      background-color: #cd5c5c;
+    }
+
+    &:nth-child(2) &_circle {
+      background-color: #ffa500;
+    }
+
+    &:nth-child(3) &_circle {
+      background-color: yellow;
+    }
+
+    &:nth-child(4) &_circle {
+      background-color: #90ee90;
+    }
+
+    &:nth-child(5) &_circle {
+      background-color: #00bfff;
+    }
+
+    &:nth-child(6) &_circle {
+      background-color: #4169e1;
+    }
+
+    &_title {
+      @media (max-width: 1320px) {
+        display: none;
+      }
+
+      @media (max-width: $screen-md) {
+        display: block;
+        font-size: $fontSize-xxxs;
+      }
+      @media (max-width: 840px) {
+        display: none;
+      }
+    }
+
+    &_disabled {
+      filter: grayscale(100%);
+      opacity: 0.6;
+    }
+
+    &:hover {
+      filter: none;
+      opacity: 1;
+    }
+  }
+
+  &__item:nth-child(4) {
+    justify-content: start;
+
+    @media (max-width: $screen-md) {
+      justify-content: center;
+    }
+
+    & span {
+      text-align: right;
+
+      @media (max-width: 840px) {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,4 +1,8 @@
 .layout {
   max-width: $screen-xl;
   margin: 0 auto;
+
+  @media (max-width: $screen-xl) {
+    padding: 0 20px;
+  }
 }
