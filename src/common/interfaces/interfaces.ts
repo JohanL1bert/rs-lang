@@ -6,3 +6,10 @@ export interface IDevelopInfo {
   description: string;
   link: string;
 }
+
+export interface IInfoGames {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+}
