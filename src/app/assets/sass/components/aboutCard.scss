@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 40px 0;
+  margin: 40px 10px;
 
   &:hover {
     @include box-shadow-card;
@@ -20,7 +20,7 @@
     margin: 0 auto;
 
     &__img {
-      width: 100%;
+      width: 260px;
       height: 100%;
       border-radius: 2%;
     }
@@ -94,6 +94,6 @@
   }
 
   .developer {
-    margin: 20px 0;
+    margin: 20px 5px;
   }
 }

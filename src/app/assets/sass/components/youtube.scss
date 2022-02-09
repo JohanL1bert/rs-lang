@@ -1,0 +1,47 @@
+.youtube {
+  background-color: #00a4c0;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 1080px;
+  }
+
+  &__video {
+    width: 50%;
+    height: 500px;
+  }
+
+  &__info {
+    width: 50%;
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    &__img {
+      display: inline-block;
+      background-image: url('../../images/smile.png');
+      background-size: contain;
+      width: 75px;
+      height: 75px;
+      background-repeat: no-repeat;
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      max-width: 300px;
+    }
+
+    &__header {
+      width: 100%;
+      white-space: pre-wrap;
+      margin: 0;
+    }
+  }
+}
