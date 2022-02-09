@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { levels } from 'common/const/textbook.const';
 
-export const LevelSwitch: React.FC = () => {
-  const [level, setLevel] = useState<string>('A1');
+interface IComponentProps {
+  level: string;
+  setLevel: (value: string) => void;
+}
 
-  const changeLevel = (lv: string) => setLevel(lv);
+export const LevelSwitch: React.FC<IComponentProps> = (props) => {
+  const { level, setLevel } = props;
 
   return (
     <div className="level-switch">
@@ -13,7 +16,7 @@ export const LevelSwitch: React.FC = () => {
           <div
             key={index}
             className={lv.char === level ? 'level-switch__item' : 'level-switch__item level-switch__item_disabled'}
-            onClick={() => changeLevel(lv.char)}
+            onClick={() => setLevel(lv.char)}
           >
             <div className="level-switch__item_circle"></div>
             <span className="level-switch__item_char">{lv.char}</span>

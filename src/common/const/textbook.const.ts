@@ -1,8 +1,8 @@
 export const levels = [
-  { title: 'Beginner', char: 'A1' },
-  { title: 'Elementary', char: 'A2' },
-  { title: 'Intermediate', char: 'B1' },
-  { title: 'Upper Intermediate', char: 'B2' },
-  { title: 'Advanced', char: 'C1' },
-  { title: 'Proficiency', char: 'C2' },
+  { title: 'Beginner', char: 'a1' },
+  { title: 'Elementary', char: 'a2' },
+  { title: 'Intermediate', char: 'b1' },
+  { title: 'Upper Intermediate', char: 'b2' },
+  { title: 'Advanced', char: 'c1' },
+  { title: 'Proficiency', char: 'c2' },
 ];

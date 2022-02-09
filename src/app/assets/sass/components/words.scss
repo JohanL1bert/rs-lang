@@ -1,0 +1,55 @@
+.words {
+  &__wrapper {
+    margin-bottom: 100px;
+    display: flex;
+    column-gap: 40px;
+  }
+
+  &__section {
+    flex: 1;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-gray;
+    border-radius: 6px;
+    font-size: $fontSize-md;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  &__presentation {
+    border: 1px solid blue;
+    width: 400px;
+  }
+}
+
+.bg-a1 {
+  background-color: #cd5c5c;
+}
+
+.bg-a2 {
+  background-color: #ffa500;
+}
+
+.bg-b1 {
+  background-color: yellow;
+}
+
+.bg-b2 {
+  background-color: #90ee90;
+}
+
+.bg-c1 {
+  background-color: #00bfff;
+}
+
+.bg-c2 {
+  background-color: #4169e1;
+}

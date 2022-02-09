@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 100px;
 
   @media (max-width: 840px) {
     column-gap: 10px;
@@ -64,6 +63,7 @@
       font-family: $fontFamily-Gilroy-Semibold;
       font-size: $fontSize-lg;
       font-weight: bold;
+      text-transform: capitalize;
 
       @media (max-width: $screen-md) {
         margin-left: 0;
