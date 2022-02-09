@@ -16,3 +16,8 @@ ul {
 a {
   text-decoration: none;
 }
+
+.container {
+  max-width: $screen-xl;
+  margin: 0 auto;
+}

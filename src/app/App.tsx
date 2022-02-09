@@ -10,14 +10,11 @@ export const App: React.FC = () => {
     <div className="app">
       <Router>
         <Header />
-
-        <div className="layout">
-          <Routes>
-            <Route path="/textbook" element={<TextbookPage />} />
-            <Route path="*" element={<HomePage />} />
-          </Routes>
-          <Footer />
-        </div>
+        <Routes>
+          <Route path="/textbook" element={<TextbookPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+        <Footer />
       </Router>
     </div>
   );

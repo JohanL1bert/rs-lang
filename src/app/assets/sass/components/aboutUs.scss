@@ -1,5 +1,12 @@
 .about {
+  &__inner {
+    min-height: 1080px;
+    display: flex;
+    align-items: center;
+  }
+
   &__developers {
+    width: 100%;
     display: flex;
     justify-content: space-around;
   }
