@@ -2,6 +2,8 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
 
   &__rectangle {
@@ -36,7 +38,7 @@
   }
 
   &__inner__text {
-    position: absolute;
+    position: relative;
     top: 25%;
   }
 

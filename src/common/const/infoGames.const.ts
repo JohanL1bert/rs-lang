@@ -7,25 +7,25 @@ export const InfoGames = [
   {
     id: 1,
     title: 'Аудио',
-    description: 'dsada',
+    description: 'Будет описание про игру',
     img: codeImg,
   },
   {
     id: 2,
     title: 'Спринт',
-    description: 'dsada',
+    description: 'Будет описание про игру',
     img: walletImg,
   },
   {
     id: 3,
-    title: 'Бокс',
-    description: 'dsada',
+    title: 'Тоже будет',
+    description: 'какое преимущество',
     img: boxImg,
   },
   {
     id: 4,
     title: 'Статистика',
-    description: 'Описание вфывф вфывфывфывыфвфывфывфывфывфывфывфывфыы',
+    description: 'Описание про преимущества. Статистика',
     img: statisitcImg,
   },
 ];
