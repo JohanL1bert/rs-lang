@@ -2,21 +2,21 @@ import create from 'zustand';
 import { basePath } from 'common/config/env.config';
 import { IWord } from 'common/interfaces/interfaces';
 
-interface IWordsState {
+interface IStateWords {
   words: IWord[];
   loading: boolean;
-  getWords: ({ group, page }: IWordsParams) => void;
+  getWords: ({ group, page }: IWordsRequestParams) => void;
 }
 
-interface IWordsParams {
+interface IWordsRequestParams {
   group: number;
   page: number;
 }
 
-export const useWordsState = create<IWordsState>((set) => ({
+export const useStateWords = create<IStateWords>((set) => ({
   words: [],
   loading: true,
-  getWords: async ({ group, page }: IWordsParams) => {
+  getWords: async ({ group, page }: IWordsRequestParams) => {
     try {
       set({ loading: true });
       const response = await fetch(`${basePath}/words?group=${group}&page=${page}`);

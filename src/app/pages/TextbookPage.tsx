@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { LevelSwitch } from 'common/components/LevelSwitch';
 import { Words } from 'common/components/Words';
-import { useWordsState } from 'entities/words/wordsState';
+import { useStateWords } from 'entities/words/stateWords';
 
 export const TextbookPage: React.FC = () => {
   const [group, setGroup] = useState<number>(0);
-  const { words, loading, getWords } = useWordsState();
+  const [page, setPage] = useState<number>(1);
+  const { words, loading, getWords } = useStateWords();
 
   useEffect(() => {
-    getWords({ group, page: 0 });
-  }, [group]);
-
-  console.log(words);
+    getWords({ group, page: page - 1 });
+  }, [group, page]);
 
   if (loading) {
     return <div>...Loading</div>;
   }
 
   return (
-    <div>
+    <div className="container">
       <h1 className="page__title">Учебник</h1>
       <LevelSwitch group={group} setGroup={setGroup} />
-      <Words group={group} words={words} />
+      <Words words={words} page={page} setPage={setPage} />
     </div>
   );
 };
