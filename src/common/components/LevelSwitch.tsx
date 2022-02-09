@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { levels } from 'common/const/textbook.const';
 
 interface IComponentProps {
-  level: string;
-  setLevel: (value: string) => void;
+  group: number;
+  setGroup: (value: number) => void;
 }
 
 export const LevelSwitch: React.FC<IComponentProps> = (props) => {
-  const { level, setLevel } = props;
+  const { group, setGroup } = props;
+
+  const changeLevel = (e: MouseEvent<HTMLDivElement>) => {
+    setGroup(Number(e.currentTarget.id));
+  };
 
   return (
     <div className="level-switch">
@@ -15,8 +19,9 @@ export const LevelSwitch: React.FC<IComponentProps> = (props) => {
         return (
           <div
             key={index}
-            className={lv.char === level ? 'level-switch__item' : 'level-switch__item level-switch__item_disabled'}
-            onClick={() => setLevel(lv.char)}
+            className={index === group ? 'level-switch__item' : 'level-switch__item level-switch__item_disabled'}
+            id={`${index}`}
+            onClick={changeLevel}
           >
             <div className="level-switch__item_circle"></div>
             <span className="level-switch__item_char">{lv.char}</span>
