@@ -9,7 +9,7 @@ export const Youtube = (): JSX.Element => {
             <div className="youtube__info__inner">
               <div className="youtube__info__img" />
               <div className="youtube__info__wrapper">
-                <h3 className="youtube__info__header">Видео про преимущество сервиса</h3>
+                <h2 className="youtube__info__header">Видео про преимущество сервиса</h2>
               </div>
             </div>
           </div>
