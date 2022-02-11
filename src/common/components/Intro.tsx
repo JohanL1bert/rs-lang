@@ -10,9 +10,6 @@ export const Intro = () => {
             <div className="intro__inner">
               <div className="intro__text">
                 <h1 className="intro__text__info">Some text</h1>
-                <button className="intro__btn">
-                  <span className="intro__btn__text">Старт</span>
-                </button>
               </div>
             </div>
           </div>

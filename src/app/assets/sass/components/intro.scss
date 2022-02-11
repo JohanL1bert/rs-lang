@@ -2,8 +2,10 @@
   &__wrapper {
     position: absolute;
     height: 300px;
-    right: 15%;
     top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
   }
 
   &__text {
@@ -14,33 +16,14 @@
   }
 
   &__background {
+    position: relative;
+
     &__img {
-      position: relative;
       z-index: -3;
-      background-image: url('../../images/mainPageBg.jpg');
+      background-image: url('../../images/main2.jpg');
       background-size: cover;
-      max-width: 1980px;
+      max-width: 100%;
       height: 1080px;
-    }
-  }
-
-  &__btn {
-    height: 54px;
-    width: 320px;
-    background-color: rgba(31, 112, 127, 0.3);
-    border: 3px solid #278d9f;
-    backdrop-filter: blur(6px);
-    border-radius: 30px;
-    margin-top: 113px;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-    outline: 0.5px solid white;
-    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-
-    &:hover {
-      outline-color: rgba(255, 255, 255, 0);
-      outline-offset: 15px;
     }
   }
 }
