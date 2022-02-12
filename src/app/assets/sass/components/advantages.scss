@@ -1,39 +1,19 @@
 .advantages {
+  background-color: #f7f7f7;
+
   &__inner {
+    padding-top: 50px;
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
-    margin-bottom: 80px;
-  }
-
-  &__rectangle {
-    display: inline-block;
-    margin-top: 150px;
-    position: absolute;
-    width: 100%;
-    width: 1047px;
-    height: 619px;
-
-    background: #f4f9ff;
-    border-radius: 150px 0px 0px 0px;
-    z-index: -1;
+    padding-bottom: 50px;
   }
 
   &__section {
-    &__card {
+    &__cards {
       display: flex;
-      justify-content: space-around;
-      width: 714px;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    &__text {
-      max-height: 900px;
-      width: 419px;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 700px;
     }
   }
 
@@ -43,66 +23,37 @@
   }
 
   &__text {
-    &__figure {
-      position: absolute;
-      width: 178px;
-      height: 178px;
-      z-index: -1;
-      top: -35px;
-      left: -55px;
-      background: #fff5db;
-      border-radius: 0px 0px 100px 0px;
-      transform: rotate(-180deg);
-    }
+    max-height: 900px;
+    width: 619px;
 
-    &__dots {
-      position: absolute;
-      top: 400px;
-      width: 405px;
-      height: 155px;
-      display: flex;
-      justify-content: space-between;
-      gap: 5px;
-      flex-wrap: wrap;
-    }
-
-    &__elipse {
-      display: inline-block;
-      position: relative;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #e7f0fc;
-      z-index: -2;
+    &__img {
+      margin-top: 50px;
+      background-image: url('../../images/book1.jpg');
+      height: 600px;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 }
 
-@media (max-width: 1900px) {
-  .advantages {
-    &__rectangle {
-      width: 100%;
-    }
-  }
-}
-
-@media (max-width: 1134px) {
+@media (max-width: 1370px) {
   .advantages {
     &__inner {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+  }
+}
 
+@media (max-width: 655px) {
+  .advantages {
     &__text {
-      &__dots {
-        display: none;
-      }
-    }
+      width: 100%;
 
-    &__section {
-      &__text {
-        height: 500px;
+      &__img {
+        height: 216px;
+        margin-bottom: 20px;
       }
     }
   }
