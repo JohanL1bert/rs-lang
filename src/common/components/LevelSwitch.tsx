@@ -23,7 +23,6 @@ export const LevelSwitch: React.FC<IComponentProps> = (props) => {
             id={`${index}`}
             onClick={changeLevel}
           >
-            <div className="level-switch__item_circle"></div>
             <span className="level-switch__item_char">{lv.char}</span>
             <span className="level-switch__item_title">{lv.title}</span>
           </div>

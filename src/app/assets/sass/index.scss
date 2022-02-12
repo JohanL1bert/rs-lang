@@ -4,8 +4,8 @@
 
 body {
   margin: 0;
-  font-family: $fontFamily-Gilroy-Regular;
-  color: $color-black-light;
+  font-family: $fontFamily-Montserrat-Regular;
+  color: $color-gray-dark;
 }
 
 ul {
@@ -21,4 +21,8 @@ a {
 .container {
   max-width: $screen-xl;
   margin: 0 auto;
+
+  @media (max-width: $screen-xl) {
+    padding: 0 20px;
+  }
 }

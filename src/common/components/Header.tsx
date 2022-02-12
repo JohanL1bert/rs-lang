@@ -4,11 +4,16 @@ import { links } from 'common/const/links.const';
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isChanged, setIsChanged] = useState<boolean>(false);
+
+  window.addEventListener('scroll', () => {
+    window.scrollY > 0 ? setIsChanged(true) : setIsChanged(false);
+  });
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="header">
+    <header className={`header ${isChanged && 'header__bg'}`}>
       <div className="header__logo">
         <div className={isOpen ? 'header__menu-icon header__menu-icon_active' : 'header__menu-icon'} onClick={toggleMenu}>
           <span></span>
