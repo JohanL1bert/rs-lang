@@ -8,11 +8,27 @@
 }
 
 .page__title {
-  font-family: $fontFamily-Gilroy-Heavy;
+  font-family: $fontFamily-Montserrat-SemiBold;
   font-size: $fontSize-xxlg;
 }
 
 .page__subtitle {
-  font-family: $fontFamily-Gilroy-Semibold;
-  font-size: $fontSize-xxlg;
+  font-family: $fontFamily-Montserrat-Medium;
+  font-size: $fontSize-xlg;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+.page__bg {
+  width: 100%;
+  height: 80px;
+  margin-top: 40px;
+  justify-content: start;
+  background-color: $color-gray;
+}
+
+.unvisible {
+  display: none;
 }
