@@ -117,4 +117,45 @@
       border-right: none;
     }
   }
+
+  &__games {
+    &_container {
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+      }
+    }
+
+    &_item {
+      width: 400px;
+      border: 1px solid $color-gray-dark;
+      cursor: pointer;
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+    }
+
+    &_item-img {
+      height: 300px;
+      background-color: $color-gray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &_item-title {
+      margin: 14px;
+      font-size: $fontSize-sm;
+      font-weight: 600;
+    }
+
+    &_item-description {
+      margin: 14px;
+    }
+  }
 }

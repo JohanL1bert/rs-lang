@@ -55,6 +55,23 @@ export const TextbookPage: React.FC = () => {
         <LevelSwitch group={group} setGroup={setGroup} />
         <Words group={group} words={words} page={page} setPage={setPage} isVisibleTranslation={isVisibleTranslation} />
       </div>
+      <div className="container">
+        <div className="textbook-page__games">
+          <p className="page__subtitle">Игры</p>
+          <div className="textbook-page__games_container">
+            <div className="textbook-page__games_item">
+              <div className="textbook-page__games_item-img">img</div>
+              <p className="textbook-page__games_item-title">Аудиовызов</p>
+              <p className="textbook-page__games_item-description">description</p>
+            </div>
+            <div className="textbook-page__games_item">
+              <div className="textbook-page__games_item-img">img</div>
+              <p className="textbook-page__games_item-title">Спринт</p>
+              <p className="textbook-page__games_item-description">description</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
