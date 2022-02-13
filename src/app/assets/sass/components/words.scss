@@ -74,8 +74,7 @@
       font-weight: bold;
     }
 
-    &_translate,
-    &_transcription {
+    &_translate {
       margin: 10px 0;
       font-size: $fontSize-md;
       font-weight: 600;
@@ -87,9 +86,9 @@
     }
 
     &_play {
-      width: 40px;
-      height: 40px;
-      margin: 0 10px;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
       background-color: transparent;
       border: none;
       border-radius: 50%;
