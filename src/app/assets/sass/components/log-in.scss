@@ -1,0 +1,71 @@
+form {
+  border: 3px solid #f1f1f1;
+}
+
+  .sign-up__input-text, 
+  .sign-up__input-password,
+  .log-in__input-password,
+  .log-in__input-text {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.sign-up__input-text:focus,
+.sign-up__input-password:focus,
+.log-in__input-password:focus,
+.log-in__input-text:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.sign-up {
+  & hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+}
+.sign-up.hide, 
+.log-in.hide {
+  display: none;
+}
+
+.container {
+  padding: 16px;
+}
+
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+p.psw {
+  margin: 0 auto;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.to-log-in,
+.to-sign-up {
+  color: #0066cc;
+  // cursor: pointer;
+}

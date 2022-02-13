@@ -4,6 +4,7 @@ import { Header } from 'common/components/Header';
 import { Footer } from 'common/components/Footer';
 import { HomePage } from 'app/pages/HomePage';
 import { TextbookPage } from 'app/pages/TextbookPage';
+import { AutorizationPage } from 'app/pages/AutorizationPage';
 
 export const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ export const App: React.FC = () => {
           <Routes>
             <Route path="/textbook" element={<TextbookPage />} />
             <Route path="*" element={<HomePage />} />
+            <Route path="/login" element={<AutorizationPage />} />
           </Routes>
           <Footer />
         </div>
