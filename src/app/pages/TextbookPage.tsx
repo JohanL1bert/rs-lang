@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { LevelSwitch } from 'common/components/LevelSwitch';
 import { Words } from 'common/components/Words';
+import { Spinner } from 'common/components/Spinner';
 import { useStateWords } from 'entities/words/stateWords';
 
 export const TextbookPage: React.FC = () => {
@@ -22,7 +23,7 @@ export const TextbookPage: React.FC = () => {
   }, [group, page]);
 
   if (loading) {
-    return <div>...Loading</div>;
+    return <Spinner />;
   }
 
   return (
