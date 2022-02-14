@@ -1,10 +1,20 @@
 .header {
-  position: sticky;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 50px;
   padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: $fontFamily-Montserrat-SemiBold;
+  transition: all 0.2s ease-out;
+  z-index: 99999;
+
+  &__bg {
+    background-color: $color-white;
+  }
 
   @media (max-width: $screen-sm) {
     padding: 0 20px;
@@ -35,7 +45,7 @@
         width: 100%;
         height: 10%;
         transition: all 0.3s ease 0s;
-        background-color: $color-black;
+        background-color: $color-gray-dark;
       }
 
       &::before,
@@ -101,7 +111,7 @@
     }
 
     & a {
-      color: $color-black;
+      color: $color-gray-dark;
     }
   }
 
@@ -122,7 +132,7 @@
     bottom: -4px;
     width: 0;
     height: 2px;
-    background-color: $color-black;
+    background-color: $color-gray-dark;
     transition: width 0.3s ease-out;
 
     @media (max-width: $screen-sm) {

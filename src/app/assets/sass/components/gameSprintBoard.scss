@@ -15,5 +15,8 @@
   }
 
   &__timer {
+    display: flex;
+    justify-content: center;
+    margin-right: 120px;
   }
 }

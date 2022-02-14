@@ -6,6 +6,7 @@
   &__inner {
     width: 540px;
     height: 500px;
+    margin-bottom: 200px;
   }
 
   &__wrapper {
@@ -78,11 +79,13 @@
     &__no {
       background: #cd5c5c;
       padding: 10px;
+      cursor: pointer;
     }
 
     &__yes {
       background: #00bfff;
       padding: 10px;
+      cursor: pointer;
     }
   }
 }

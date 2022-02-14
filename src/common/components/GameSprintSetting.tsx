@@ -2,11 +2,22 @@ import React, { useState } from 'react';
 
 export const GameSprintSetting = () => {
   const [audio, setAudio] = useState<boolean>(false);
-  const [fullScreen, setFullScreen] = useState<boolean>(false);
 
   const changeMusic = () => {};
 
-  const changeFullScreen = () => {};
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
+
+  const changeFullScreen = () => {
+    toggleFullScreen();
+  };
 
   return (
     <div className="sprint__setting">
