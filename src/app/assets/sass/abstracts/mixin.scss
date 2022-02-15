@@ -23,6 +23,10 @@
   transition: all 200ms ease;
 }
 
+@mixin borderResult {
+  border: 1px solid black;
+}
+
 @function colorBoxShadow($firstColor, $secondColor, $thirdColor, $shadow) {
   @return (
     -1px -1px 1px $firstColor,

@@ -13,8 +13,8 @@ export const App: React.FC = () => {
         <Header />
         <Routes>
           <Route path="/textbook" element={<TextbookPage />} />
-          <Route path="*" element={<HomePage />} />
           <Route path="/games" element={<GameSprintSelectLvl />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer />
       </Router>

@@ -30,3 +30,7 @@ export interface IWord {
   word: string;
   wordTranslate: string;
 }
+
+export interface IVisiblePopup {
+  changeVisibilityPopup: (data: boolean) => void;
+}

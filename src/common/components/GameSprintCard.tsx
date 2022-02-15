@@ -1,6 +1,8 @@
 import React from 'react';
 
 export const GameSprintCard = () => {
+  const isCorrect = () => {};
+
   return (
     <div className="sprint__card">
       <div className="sprint__card__inner">
@@ -16,7 +18,9 @@ export const GameSprintCard = () => {
             <div className="card__info__translate">Здесь будет переведенное слово</div>
           </div>
           <div className="sprint__card__btn card__btn">
-            <button className="card__btn__no">Неправильно</button>
+            <button className="card__btn__no" onClick={() => isCorrect()}>
+              Неправильно
+            </button>
             <button className="card__btn__yes">Правильно</button>
           </div>
         </div>
