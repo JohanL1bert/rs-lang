@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 export const Intro = () => {
-  const [textPos, setTextPos] = useState(false);
+  const [textPos, setTextPos] = useState<boolean>(false);
 
   const animateText = () => {
-    const screenSize = window.innerHeight;
-    const scrollPosY = window.scrollY;
-    const lowPercent = (screenSize / 100) * 10;
+    const screenSize: number = window.innerHeight;
+    const scrollPosY: number = window.scrollY;
+    const lowPercent: number = (screenSize / 100) * 10;
 
     scrollPosY > lowPercent ? setTextPos(true) : setTextPos(false);
   };
