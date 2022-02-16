@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { ISetAudio } from 'common/interfaces/interfaces';
 import soundOn from 'app/assets/images/sound.png';
 import soundOff from 'app/assets/images/mute.png';
 
-export const GameSprintSetting = () => {
-  const [audio, setAudio] = useState<boolean>(true);
-  const [imageSound, setImgSound] = useState(soundOn);
+export const GameSprintSetting: React.FC<ISetAudio> = (props) => {
+  const { audio, setAudio } = props;
+  const [imageSound, setImgSound] = useState<string>(soundOn);
 
   const changeMusic = () => {
+    console.log(audio);
     setAudio(!audio);
-    if (audio) {
+    if (!audio) {
       setImgSound(soundOn);
     } else {
       setImgSound(soundOff);

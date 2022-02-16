@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { IVisiblePopup } from 'common/interfaces/interfaces';
 
 export const GameSprintTimer: React.FC<IVisiblePopup> = ({ changeVisibilityPopup }) => {
-  // Возможно лучше переписать через дженерик
-
   const [time, setTime] = useState<number | string>(60);
 
   const returnTimeProgress = () => {

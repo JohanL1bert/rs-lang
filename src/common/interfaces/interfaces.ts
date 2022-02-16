@@ -34,3 +34,8 @@ export interface IWord {
 export interface IVisiblePopup {
   changeVisibilityPopup: (data: boolean) => void;
 }
+
+export interface ISetAudio {
+  audio: boolean;
+  setAudio: React.Dispatch<React.SetStateAction<boolean>>;
+}
