@@ -4,13 +4,13 @@ import soundOn from 'app/assets/images/sound.png';
 import soundOff from 'app/assets/images/mute.png';
 
 export const GameSprintSetting: React.FC<ISetAudio> = (props) => {
-  const { audio, setAudio } = props;
+  const { audioV, setAudioV } = props;
   const [imageSound, setImgSound] = useState<string>(soundOn);
 
   const changeMusic = () => {
-    console.log(audio);
-    setAudio(!audio);
-    if (!audio) {
+    console.log(audioV);
+    setAudioV(!audioV);
+    if (!audioV) {
       setImgSound(soundOn);
     } else {
       setImgSound(soundOff);

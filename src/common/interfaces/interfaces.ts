@@ -36,6 +36,6 @@ export interface IVisiblePopup {
 }
 
 export interface ISetAudio {
-  audio: boolean;
-  setAudio: React.Dispatch<React.SetStateAction<boolean>>;
+  audioV: boolean;
+  setAudioV: React.Dispatch<React.SetStateAction<boolean>>;
 }
