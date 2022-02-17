@@ -8,7 +8,6 @@ export const GameSprintSetting: React.FC<ISetAudio> = (props) => {
   const [imageSound, setImgSound] = useState<string>(soundOn);
 
   const changeMusic = () => {
-    console.log(audioV);
     setAudioV(!audioV);
     if (!audioV) {
       setImgSound(soundOn);

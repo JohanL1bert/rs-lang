@@ -7,7 +7,7 @@ interface ISprintWords {
   getSprintWords: (group: number, page: number) => void;
 }
 
-// Заглушкаю Нужно как-то переделать
+// Заглушка Нужно как-то переделать
 export const useSprinStateWords = create<ISprintWords>((set) => ({
   sprintWords: [],
   getSprintWords: async (group: number, page: number) => {

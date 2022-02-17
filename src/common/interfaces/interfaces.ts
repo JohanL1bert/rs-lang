@@ -39,3 +39,10 @@ export interface ISetAudio {
   audioV: boolean;
   setAudioV: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export interface IStateOfPopupData {
+  audio: string;
+  word: string;
+  wordTranslate: string;
+  isCorrectChoid: boolean;
+}

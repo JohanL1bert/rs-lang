@@ -12,6 +12,7 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
   const [audioV, setAudioV] = useState<boolean>(true);
   const [correctWords, setCorrectWords] = useState<string>('');
   const [stateOfData, setStateofData] = useState<{}>({});
+  const [stateOfPopup, setStateOfPopup] = useState([]);
 
   const [visiblePopup, setVisiblePopup] = useState<boolean>(false);
 
@@ -33,7 +34,7 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
       const fakeWord: number = randomPageChoice(value.length - 1, 0);
       const valueOfTrue = randomPageChoice(1, 0);
       const wordTrue: IWord = value[choiceWord];
-      console.log(wordTrue, ' true');
+      /*       console.log(wordTrue, ' true'); */
       const wordFalse: IWord = value[fakeWord];
       if (valueOfTrue === 1) {
         const { audio, word, wordTranslate }: { audio: string; word: string; wordTranslate: string } = wordTrue;
@@ -45,7 +46,7 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
         });
       } else {
         const { audio, word, wordTranslate }: { audio: string; word: string; wordTranslate: string } = wordTrue;
-        console.log(wordFalse, 'false');
+        /*         console.log(wordFalse, 'false'); */
         const falseWord = wordFalse.wordTranslate;
         setStateofData({
           audio: audio,
@@ -69,7 +70,7 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
 
   return (
     <div className="game__board">
-      {visiblePopup && <GameSprintPopup />}
+      {visiblePopup && <GameSprintPopup data={stateOfPopup} />}
       <div className="game__board__inner">
         <div className="game__board__setting">
           <GameSprintSetting
@@ -82,7 +83,7 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
         <div className="game__board__timer">
           <GameSprintTimer changeVisibilityPopup={setVisiblePopup} />
         </div>
-        <GameSprintCard audioV={audioV} wordObj={stateOfData} funData={renderComponentData} />
+        <GameSprintCard audioV={audioV} wordObj={stateOfData} funData={renderComponentData} setStateOfPopup={setStateOfPopup} />
       </div>
     </div>
   );

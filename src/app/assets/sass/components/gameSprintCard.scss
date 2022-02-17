@@ -41,6 +41,11 @@
       padding-left: 15%;
     }
 
+    &__items {
+      width: 100px;
+      display: flex;
+    }
+
     &__strick {
       background-image: url('../../images/heart.png');
       background-repeat: no-repeat;
