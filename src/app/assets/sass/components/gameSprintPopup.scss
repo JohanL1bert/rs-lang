@@ -30,7 +30,6 @@
 
   &__item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 10px;
     border-bottom: 1px solid black;
@@ -50,26 +49,20 @@
     }
 
     &__word {
+      width: 100px;
     }
     &__transcription {
+      width: 100px;
     }
     &__translate {
     }
     &__correct {
-      margin-right: 10px;
+      @include correctBtn;
       background-image: url('../../images/correct.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      width: 30px;
-      height: 30px;
     }
     &__incorrect {
-      margin-right: 10px;
+      @include correctBtn;
       background-image: url('../../images/fail.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-      width: 30px;
-      height: 30px;
     }
   }
 }

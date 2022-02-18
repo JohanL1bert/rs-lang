@@ -27,6 +27,15 @@
   border: 1px solid black;
 }
 
+@mixin correctBtn {
+  margin-left: auto;
+  margin-right: 2%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
 @function colorBoxShadow($firstColor, $secondColor, $thirdColor, $shadow) {
   @return (
     -1px -1px 1px $firstColor,
