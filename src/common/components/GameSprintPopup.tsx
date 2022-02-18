@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { basePath } from 'common/config/env.config';
+import { GameSprintStatistic } from 'common/components/GameSprintStatistic';
 
 export const GameSprintPopup = (props: any) => {
   const { data } = props;
@@ -23,7 +24,7 @@ export const GameSprintPopup = (props: any) => {
                 <li key={i} className="sprint__item">
                   <p className="sprint__item__sound" onClick={() => wordSound(item.audio)}></p>
                   <p className="sprint__item__word">{item.word}</p>
-                  <p className="sprint__item__transcription">{item.word}</p>
+                  <p className="sprint__item__transcription">{item.transcription}</p>
                   <p className="sprint__item__translate">{item.wordTranslate}</p>
                   <p className={item.isCorrectChoice ? 'sprint__item__correct' : 'sprint__item__incorrect'}></p>
                 </li>

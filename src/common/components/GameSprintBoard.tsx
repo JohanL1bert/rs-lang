@@ -10,7 +10,6 @@ import { useSprinStateWords } from 'entities/sprintWords/sprintStateWords';
 export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
   /*   const { sprintWords, getSprintWords } = useSprinStateWords(); */
   const [audioV, setAudioV] = useState<boolean>(true);
-  const [correctWords, setCorrectWords] = useState<string>('');
   const [stateOfData, setStateofData] = useState<{}>({});
   const [stateOfPopup, setStateOfPopup] = useState([]);
 
@@ -36,22 +35,30 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
       const wordTrue: IWord = value[choiceWord];
       /*       console.log(wordTrue, ' true'); */
       const wordFalse: IWord = value[fakeWord];
+      const {
+        audio,
+        word,
+        wordTranslate,
+        transcription,
+      }: { audio: string; word: string; wordTranslate: string; transcription: string } = wordTrue;
       if (valueOfTrue === 1) {
-        const { audio, word, wordTranslate }: { audio: string; word: string; wordTranslate: string } = wordTrue;
         setStateofData({
           audio: audio,
           word: word,
           wordTranslate: wordTranslate,
+          transcription: transcription,
+          isWordReal: wordTranslate,
           truthy: 1,
         });
       } else {
-        const { audio, word, wordTranslate }: { audio: string; word: string; wordTranslate: string } = wordTrue;
         /*         console.log(wordFalse, 'false'); */
         const falseWord = wordFalse.wordTranslate;
         setStateofData({
           audio: audio,
           word: word,
-          wordTranslate: falseWord,
+          wordTranslate: wordTranslate,
+          transcription: transcription,
+          isWordReal: falseWord,
           truthy: 0,
         });
       }
