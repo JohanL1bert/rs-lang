@@ -43,6 +43,23 @@ export interface ISetAudio {
 export interface IStateOfPopupData {
   audio: string;
   word: string;
+  transcription: string;
   wordTranslate: string;
-  isCorrectChoid: boolean;
+  isCorrectChoice: boolean;
+}
+
+interface ICanvasDataSet {
+  data: Array<number>;
+  backgroundColor: Array<string>;
+  borderColor: Array<string>;
+  borderWidth: number;
+}
+
+export interface ICanvasStat {
+  labels: Array<string>;
+  datasets: Array<ICanvasDataSet>;
+}
+
+export interface ISprintStat {
+  dataOfStats: Array<IStateOfPopupData>;
 }
