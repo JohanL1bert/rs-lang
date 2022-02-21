@@ -29,18 +29,17 @@
       padding: 10px;
     }
 
-    &__items {
-    }
-
     &__btn {
       @include butttonSprintLevel;
 
       &:nth-child(1) {
         background: rgb(228, 78, 85);
         box-shadow: colorBoxShadow(rgb(205, 92, 92), rgb(209, 50, 57), rgb(228, 116, 121), rgba(0, 0, 0, 0.1));
+
         &:hover {
           box-shadow: colorBoxShadow(rgb(209, 50, 57), rgb(26, 20, 20), rgb(228, 116, 121), rgba(0, 0, 0, 0.2));
         }
+
         &:active {
           box-shadow: colorBoxShadowActive(rgb(228, 78, 85), rgb(228, 116, 121), rgb(209, 50, 57));
         }
@@ -49,9 +48,11 @@
       &:nth-child(2) {
         background: rgb(255, 165, 0);
         box-shadow: colorBoxShadow(rgb(255, 165, 0), rgb(212, 184, 132), rgb(218, 192, 108), rgba(0, 0, 0, 0.1));
+
         &:hover {
           box-shadow: colorBoxShadow(rgba(214, 132, 24, 0.726), rgb(26, 20, 20), rgb(228, 189, 116), rgba(0, 0, 0, 0.2));
         }
+
         &:active {
           box-shadow: colorBoxShadowActive(rgb(255, 165, 0), rgb(228, 179, 116), rgb(209, 127, 50));
         }
@@ -60,9 +61,11 @@
       &:nth-child(3) {
         background: rgb(255, 255, 0);
         box-shadow: colorBoxShadow(rgb(255, 255, 0), rgb(193, 209, 50), rgb(226, 228, 116), rgba(0, 0, 0, 0.1));
+
         &:hover {
           box-shadow: colorBoxShadow(rgb(206, 209, 50), rgb(26, 20, 20), rgb(221, 228, 116), rgba(0, 0, 0, 0.2));
         }
+
         &:active {
           box-shadow: colorBoxShadowActive(rgb(255, 255, 0), rgb(204, 228, 116), rgb(185, 209, 50));
         }
@@ -71,9 +74,11 @@
       &:nth-child(4) {
         background: rgb(144, 238, 144);
         box-shadow: colorBoxShadow(rgb(144, 238, 144), rgb(95, 209, 50), rgb(116, 228, 140), rgba(0, 0, 0, 0.1));
+
         &:hover {
           box-shadow: colorBoxShadow(rgb(50, 209, 98), rgb(26, 20, 20), rgb(116, 228, 150), rgba(0, 0, 0, 0.2));
         }
+
         &:active {
           box-shadow: colorBoxShadowActive(rgb(144, 238, 144), rgb(116, 228, 163), rgb(63, 209, 50));
         }
@@ -82,9 +87,11 @@
       &:nth-child(5) {
         background: rgb(0, 191, 255);
         box-shadow: colorBoxShadow(rgb(0, 191, 255), rgb(50, 191, 209), rgb(116, 215, 228), rgba(0, 0, 0, 0.1));
+
         &:hover {
           box-shadow: colorBoxShadow(rgb(50, 172, 209), rgb(26, 20, 20), rgb(116, 215, 228), rgba(0, 0, 0, 0.2));
         }
+
         &:active {
           box-shadow: colorBoxShadowActive(rgb(0, 191, 255), rgb(116, 215, 228), rgb(50, 172, 209));
         }
@@ -93,9 +100,11 @@
       &:nth-child(6) {
         background: rgb(65, 105, 225);
         box-shadow: colorBoxShadow(rgb(65, 105, 225), rgb(50, 100, 209), rgb(116, 127, 228), rgba(0, 0, 0, 0.1));
+
         &:hover {
           box-shadow: colorBoxShadow(rgb(106, 50, 209), rgb(26, 20, 20), rgb(127, 116, 228), rgba(0, 0, 0, 0.2));
         }
+
         &:active {
           box-shadow: colorBoxShadowActive(rgb(65, 105, 225), rgb(116, 118, 228), rgb(50, 66, 209));
         }

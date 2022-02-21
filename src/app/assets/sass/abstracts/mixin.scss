@@ -13,7 +13,7 @@
   height: 30px;
   min-width: 30px;
   border-radius: calc(2.5rem / 2);
-  border: 0;
+  border: 1px solid white;
   font-weight: 800;
   text-transform: uppercase;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.15);
@@ -21,6 +21,19 @@
   margin: 6px 6px;
   letter-spacing: 0.1em;
   transition: all 200ms ease;
+}
+
+@mixin borderResult {
+  border: 1px solid black;
+}
+
+@mixin correctBtn {
+  margin-left: auto;
+  margin-right: 2%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
 }
 
 @function colorBoxShadow($firstColor, $secondColor, $thirdColor, $shadow) {

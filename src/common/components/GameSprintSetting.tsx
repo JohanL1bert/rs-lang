@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
+import { ISetAudio } from 'common/interfaces/interfaces';
+import soundOn from 'app/assets/images/sound.png';
+import soundOff from 'app/assets/images/mute.png';
 
-export const GameSprintSetting = () => {
-  const [audio, setAudio] = useState<boolean>(false);
+export const GameSprintSetting: React.FC<ISetAudio> = (props) => {
+  const { audioV, setAudioV } = props;
+  const [imageSound, setImgSound] = useState<string>(soundOn);
 
-  const changeMusic = () => {};
+  const changeMusic = () => {
+    setAudioV(!audioV);
+    if (!audioV) {
+      setImgSound(soundOn);
+    } else {
+      setImgSound(soundOff);
+    }
+  };
 
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
@@ -22,7 +33,7 @@ export const GameSprintSetting = () => {
   return (
     <div className="sprint__setting">
       <div className="sprint__setting__inner">
-        <div className="sprint__setting__music" onClick={changeMusic}></div>
+        <div className="sprint__setting__music" style={{ backgroundImage: `url(${imageSound})` }} onClick={changeMusic}></div>
         <div className="sprint__setting__fullscreen" onClick={changeFullScreen}></div>
       </div>
     </div>

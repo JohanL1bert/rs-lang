@@ -15,9 +15,9 @@ interface IComponentProps {
 }
 
 export const Presentation: React.FC<IComponentProps> = (props) => {
-  const { group, word, isVisibleTranslation, audio, content, filter } = props;
+  const { group, word, isVisibleTranslation, audio, content } = props;
   const { user, token, isAuth } = useStateAuth();
-  const { addToDifficulty, addToRemote, deleteWord } = useStateWords();
+  const { addToDifficulty, addToRemote } = useStateWords();
 
   const play = (idx: number) => {
     audio.forEach((item) => {
@@ -43,13 +43,6 @@ export const Presentation: React.FC<IComponentProps> = (props) => {
     }
   };
 
-  const restoreWord = () => {
-    if (user) {
-      console.log();
-      deleteWord(user.id, word.id, token);
-    }
-  };
-
   return (
     <div className="presentation">
       <div className="presentation__header">
@@ -67,11 +60,6 @@ export const Presentation: React.FC<IComponentProps> = (props) => {
         <div className="presentation__btns">
           <PresentationBtn group={group} title="в сложные слова" onClick={addToDifficult} />
           <PresentationBtn group={group} title="удалить слово" onClick={addWordToRemote} />
-        </div>
-      )}
-      {isAuth && content === 'dictionary' && (
-        <div className="presentation__btns">
-          <PresentationBtn group={group} title="восстановить" onClick={restoreWord} />
         </div>
       )}
       <p className="presentation__meaning">Значение</p>

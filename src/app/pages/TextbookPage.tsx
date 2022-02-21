@@ -20,7 +20,7 @@ export const TextbookPage: React.FC = () => {
   const navigate = useNavigate();
 
   const moveToSprint = () => {
-    navigate('/games', { state: { words } });
+    navigate('/games', { state: { group } });
   };
 
   useEffect(() => {
