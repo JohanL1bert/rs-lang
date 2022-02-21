@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { GameSprintBoard } from 'common/components/GameSprintBoard';
 
-export const GameSprintSelectLvl = () => {
+interface IComponentProps {
+  group: number;
+}
+
+export const GameSprintSelectLvl: React.FC = () => {
   const [visibleSetting, setVisibleSetting] = useState(false);
   const [lvlDifficulty, setLevelDifficulty] = useState<number>(0);
+  const location = useLocation();
+  const state = location.state as IComponentProps;
+  const group = state ? state.group : undefined;
 
   const goToGame = (value: number) => {
     setVisibleSetting(true);
@@ -12,7 +20,22 @@ export const GameSprintSelectLvl = () => {
 
   return (
     <section className="sprint__level">
-      {!visibleSetting ? (
+      {group !== undefined ? (
+        !visibleSetting ? (
+          <div className="sprint__level__inner">
+            <div className="sprint__level__wrapper">
+              <p className="sprint__level__description">Игра начнется с текущими словами из словаря</p>
+              <div className="sprint__level__items">
+                <button className="sprint__level__btn" onClick={() => goToGame(group)}>
+                  Начать
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <GameSprintBoard lvlValue={lvlDifficulty} />
+        )
+      ) : !visibleSetting ? (
         <div className="sprint__level__inner">
           <div className="sprint__level__wrapper">
             <h3 className="sprint__level__header">Выберите сложность</h3>
