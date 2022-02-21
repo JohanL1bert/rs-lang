@@ -4,11 +4,8 @@
       margin-bottom: 40px;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
-
-      @media (max-width: 500px) {
-        flex-direction: column;
-      }
     }
 
     &_item {
@@ -16,17 +13,18 @@
       border: 1px solid $color-gray-dark;
       cursor: pointer;
 
-      @media (max-width: 500px) {
-        width: 100%;
+      @media (max-width: 450px) {
+        width: 280px;
       }
     }
 
     &_item-img {
-      height: 300px;
-      background-color: $color-gray;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 100%;
+      height: 360px;
+
+      @media (max-width: 450px) {
+        height: 280px;
+      }
     }
 
     &_item-title {

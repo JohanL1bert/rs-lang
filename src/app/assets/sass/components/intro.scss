@@ -1,57 +1,63 @@
 .intro {
-  &__wrapper {
-    position: absolute;
-    height: 300px;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &__background {
-    position: relative;
-
-    &__img {
-      z-index: -3;
-      background-image: url('../../images/main2.jpg');
-      background-size: cover;
-      max-width: 100%;
-      height: 1080px;
-    }
-  }
-
-  &__text {
-    position: relative;
-    width: 350px;
-
-    @media (max-width: 400px) {
-      width: 300px;
-    }
-  }
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../images/main2.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__title {
-    position: absolute;
-    top: -50px;
-    left: 0;
-    transform: translate(0, 100%);
-    opacity: 0;
     font-family: $fontFamily-Montserrat-ExtraBold;
     font-size: 86px;
     color: $color-white;
-    animation: anim 2s forwards;
+    transform: translate(0, 100%);
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
 
     @media (max-width: 400px) {
-      font-size: 72px;
+      font-size: 76px;
     }
   }
 
-  @keyframes anim {
+  @-webkit-keyframes fadeIn {
     from {
       transform: translate(0, 100%);
       opacity: 0;
     }
     to {
-      transform: translate(0, -50px);
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes fadeIn {
+    from {
+      transform: translate(0, 100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      transform: translate(0, 100%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
       opacity: 1;
     }
   }
