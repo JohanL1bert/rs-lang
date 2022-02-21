@@ -1,24 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-export const Intro = () => {
-  const [textPos, setTextPos] = useState(false);
-
-  const animateText = () => {
-    const screenSize = window.innerHeight;
-    const scrollPosY = window.scrollY;
-    const lowPercent = (screenSize / 100) * 10;
-
-    scrollPosY > lowPercent ? setTextPos(true) : setTextPos(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', animateText, true);
-
-    return () => {
-      window.removeEventListener('scroll', animateText, true);
-    };
-  }, []);
-
+export const Intro: React.FC = () => {
   return (
     <section className="intro">
       <div className="intro__background">
@@ -27,7 +9,7 @@ export const Intro = () => {
           <div className="container">
             <div className="intro__inner">
               <div className="intro__text">
-                <h1 className={!textPos ? 'intro__text__info' : 'intro__text__info__active'}>Some text</h1>
+                <h1 className="intro__title">RSLang</h1>
               </div>
             </div>
           </div>

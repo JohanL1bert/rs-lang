@@ -2,24 +2,28 @@ import React, { useState } from 'react';
 import { Paginator } from 'common/components/Paginator';
 import { basePath } from 'common/config/env.config';
 import { IWord } from 'common/interfaces/interfaces';
+import { Presentation } from 'common/components/Presentation';
 
 interface IComponentProps {
-  group: number;
   words: IWord[];
+  group: number;
   page: number;
   setPage: (page: number) => void;
+  totalCount: number | null;
+  content: string;
   isVisibleTranslation: boolean;
+  filter: string;
 }
 
 export const Words: React.FC<IComponentProps> = (props) => {
-  const { group, words, page, setPage, isVisibleTranslation } = props;
+  const { words, group, page, setPage, totalCount, content, isVisibleTranslation, filter } = props;
   const [word, setWord] = useState<IWord>(words[0]);
   const [audio, setAudio] = useState<HTMLAudioElement[]>([
     new Audio(`${basePath}/${word.audio}`),
     new Audio(`${basePath}/${word.audioMeaning}`),
     new Audio(`${basePath}/${word.audioExample}`),
   ]);
-  const pageSize = 30;
+  const pageSize = content === 'textbook' ? 30 : totalCount ? Math.ceil(totalCount / 20) : 1;
   const bg = `bg-${group}`;
 
   const changeWord = (wd: IWord) => {
@@ -29,14 +33,6 @@ export const Words: React.FC<IComponentProps> = (props) => {
       new Audio(`${basePath}/${wd.audioMeaning}`),
       new Audio(`${basePath}/${wd.audioExample}`),
     ]);
-  };
-
-  const play = (idx: number) => {
-    audio.forEach((item) => {
-      item.pause();
-    });
-
-    audio[idx].play();
   };
 
   return (
@@ -55,33 +51,14 @@ export const Words: React.FC<IComponentProps> = (props) => {
           </div>
           <Paginator currentPage={page} totalCount={words.length * pageSize} pageSize={words.length} onPageChange={setPage} />
         </div>
-        <div className="words__presentation">
-          <div className="words__presentation_header">
-            <div>
-              <p className="words__presentation_word">{word.word}</p>
-              <p className={`words__presentation_translate ${!isVisibleTranslation && 'unvisible'}`}>{word.wordTranslate}</p>
-              <div className="words__presentation_transcription">
-                <button className="words__presentation_play" onClick={() => play(0)}></button>
-                <span>{word.transcription}</span>
-              </div>
-            </div>
-            <div className="words__presentation_img" style={{ backgroundImage: `url(${basePath}/${word.image})` }}></div>
-          </div>
-          <p className="words__presentation_meaning">Значение</p>
-          <div className="words__presentation_transcription">
-            <button className="words__presentation_play" onClick={() => play(1)}></button>
-            {/* eslint-disable-next-line */}
-            <span dangerouslySetInnerHTML={{ __html: word.textMeaning }}></span>
-          </div>
-          <p className={!isVisibleTranslation ? 'unvisible' : ''}>{word.textMeaningTranslate}</p>
-          <p className="words__presentation_meaning">Перевод</p>
-          <div className="words__presentation_transcription">
-            <button className="words__presentation_play" onClick={() => play(2)}></button>
-            {/* eslint-disable-next-line */}
-            <span dangerouslySetInnerHTML={{ __html: word.textExample }}></span>
-          </div>
-          <p className={!isVisibleTranslation ? 'unvisible' : ''}>{word.textExampleTranslate}</p>
-        </div>
+        <Presentation
+          group={group}
+          word={word}
+          isVisibleTranslation={isVisibleTranslation}
+          audio={audio}
+          content={content}
+          filter={filter}
+        />
       </div>
     </div>
   );

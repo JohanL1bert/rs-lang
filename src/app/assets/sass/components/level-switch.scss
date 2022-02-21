@@ -8,7 +8,8 @@
     column-gap: 10px;
   }
 
-  &__item {
+  &__item,
+  &__filter-item {
     position: relative;
     box-sizing: border-box;
     width: 200px;
@@ -92,6 +93,29 @@
     &:hover {
       filter: none;
       opacity: 1;
+    }
+  }
+
+  &__filter {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    @media (max-width: $screen-md) {
+      column-gap: 4px;
+    }
+
+    &-item {
+      padding: 0 10px;
+
+      @media (max-width: $screen-md) {
+        padding: 0 4px;
+      }
+    }
+
+    &-item-active {
+      background-color: $color-gray;
     }
   }
 }

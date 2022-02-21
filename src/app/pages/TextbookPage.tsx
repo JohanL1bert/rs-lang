@@ -2,25 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { LevelSwitch } from 'common/components/LevelSwitch';
 import { Words } from 'common/components/Words';
 import { Spinner } from 'common/components/Spinner';
+import { ContentSwitcher } from 'common/components/ContentSwitcher';
 import { useStateWords } from 'entities/words/stateWords';
+import { useStateAuth } from 'entities/auth/stateAuth';
 
 export const TextbookPage: React.FC = () => {
-  const [group, setGroup] = useState<number>(0);
-  const [page, setPage] = useState<number>(1);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [content, setContent] = useState('textbook');
   const [isVisibleTranslation, setIsVisibleTranslation] = useState<boolean>(true);
-  const { words, loading, getWords } = useStateWords();
-
-  const togglePopup = () => setIsOpen(!isOpen);
-
-  const toggleTranslation = () => {
-    setIsVisibleTranslation(!isVisibleTranslation);
-    setIsOpen(!isOpen);
-  };
+  const [group, setGroup] = useState<number>(0);
+  const [filter, setFilter] = useState<string>('{"userWord.difficulty":"studied"}');
+  const [page, setPage] = useState<number>(1);
+  const { words, loading, totalCount, getWords, getAggregatedWords } = useStateWords();
+  const { isAuth, user, token } = useStateAuth();
 
   useEffect(() => {
-    getWords({ group, page: page - 1 });
-  }, [group, page]);
+    if (content === 'textbook') {
+      getWords({ group, page: page - 1 });
+    } else {
+      user && getAggregatedWords(user.id, token, group, page - 1, filter);
+    }
+  }, [group, page, content, filter]);
 
   if (loading) {
     return <Spinner />;
@@ -28,33 +29,31 @@ export const TextbookPage: React.FC = () => {
 
   return (
     <div className="pt-40">
-      <div className="page__bg">
-        <div className="container">
-          <div className="textbook-page__title">
-            <h1 className="page__title">Учебник</h1>
-            <div className="textbook-page__settings">
-              <button className="textbook-page__settings-btn" onClick={togglePopup}></button>
-              <div className={`textbook-page__popup ${isOpen && 'textbook-page__popup_visible'}`}>
-                <p className="textbook-page__popup_title">Настройки</p>
-                <div className="textbook-page__popup_check">
-                  <input
-                    className="textbook-page__popup_checkbox"
-                    type="checkbox"
-                    id="textbookPopup"
-                    onChange={toggleTranslation}
-                    checked={isVisibleTranslation}
-                  />
-                  <label className="textbook-page__popup_pseudo-label" htmlFor="textbookPopup"></label>
-                  <span className="textbook-page__popup_label">Отображать перевод слова и перевод предложений?</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <ContentSwitcher
+        isAuth={isAuth}
+        content={content}
+        setContent={setContent}
+        isVisibleTranslation={isVisibleTranslation}
+        setIsVisibleTranslation={setIsVisibleTranslation}
+      />
+      <div className="container">
+        <LevelSwitch group={group} setGroup={setGroup} content={content} filter={filter} setFilter={setFilter} />
       </div>
       <div className="container">
-        <LevelSwitch group={group} setGroup={setGroup} />
-        <Words group={group} words={words} page={page} setPage={setPage} isVisibleTranslation={isVisibleTranslation} />
+        {words.length ? (
+          <Words
+            words={words}
+            group={group}
+            page={page}
+            setPage={setPage}
+            totalCount={totalCount}
+            content={content}
+            isVisibleTranslation={isVisibleTranslation}
+            filter={filter}
+          />
+        ) : (
+          <p>В этом разделе еще нет слов</p>
+        )}
       </div>
       <div className="container">
         <div className="textbook-page__games">

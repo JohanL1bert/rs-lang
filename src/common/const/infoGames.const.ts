@@ -5,20 +5,21 @@ import statisitc from 'app/assets/images/statistic.png';
 export const InfoGames = [
   {
     id: 1,
-    title: 'Аудио',
-    description: 'Будет описание про игру',
-    img: audio,
+    title: 'Словарь',
+    description:
+      'Создай свой собственный словарь для изучения слов - добавляй слова, которым хочешь уделить больше внимания и удаляй, если слово тебе уже хорошо известно',
+    img: statisitc,
   },
   {
     id: 2,
-    title: 'Спринт',
-    description: 'Будет описание про игру',
-    img: run,
+    title: 'Аудио',
+    description: 'Попробуй понять, какое слово было произнесено',
+    img: audio,
   },
   {
     id: 3,
-    title: 'Статистика',
-    description: 'Описание про преимущества. Статистикаss',
-    img: statisitc,
+    title: 'Спринт',
+    description: 'Как можно быстрее определи, верный перевод слова или нет',
+    img: run,
   },
 ];

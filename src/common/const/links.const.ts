@@ -3,5 +3,4 @@ export const links = [
   { path: '/textbook', title: 'Учебник' },
   { path: '/games', title: 'Игры' },
   { path: '/statistic', title: 'Статистика' },
-  { path: '/login', title: 'Вход' },
 ];
