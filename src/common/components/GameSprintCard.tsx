@@ -4,8 +4,7 @@ import { ISprintCard, IStateOfPopupData } from 'common/interfaces/interfaces';
 import correctMusic from 'app/assets/sound/correct.wav';
 import failMusic from 'app/assets/sound/fail.wav';
 
-export const GameSprintCard = (props: any) => {
-  console.log(props);
+export const GameSprintCard = (props: ISprintCard) => {
   const { audioV, wordObj, funData, setStateOfPopup } = props;
   const { audio, word, wordTranslate, transcription, truthy, isWordReal } = wordObj;
   const [score, setScore] = useState<number>(0);
@@ -60,7 +59,7 @@ export const GameSprintCard = (props: any) => {
 
     poinStore(isCorrectChoice);
 
-    setStateOfPopup((prev: any) => {
+    setStateOfPopup((prev: IStateOfPopupData[]) => {
       return [
         ...prev,
         {

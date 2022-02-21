@@ -64,8 +64,18 @@ export interface ISprintStat {
   dataOfStats: Array<IStateOfPopupData>;
 }
 
+export interface ICardResult {
+  audio: string;
+  isWordReal: string;
+  transcription: string;
+  truthy: number;
+  word: string;
+  wordTranslate: string;
+}
+
 export interface ISprintCard {
-  audioV: string;
+  audioV: boolean;
   funData: () => void;
-  setStateOfPopup: React.Dispatch<React.SetStateAction<boolean>>;
+  setStateOfPopup: React.Dispatch<React.SetStateAction<IStateOfPopupData[]>>;
+  wordObj: ICardResult;
 }

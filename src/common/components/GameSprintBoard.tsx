@@ -3,7 +3,7 @@ import { GameSprintCard } from 'common/components/GameSprintCard';
 import { GameSprintSetting } from 'common/components/GameSprintSetting';
 import { GameSprintTimer } from 'common/components/GameSprintTimer';
 import { GameSprintPopup } from 'common/components/GameSprintPopup';
-import { IWord } from 'common/interfaces/interfaces';
+import { IWord, ICardResult, IStateOfPopupData } from 'common/interfaces/interfaces';
 import { basePath } from 'common/config/env.config';
 import { Spinner } from 'common/components/Spinner';
 import { useSprinStateWords } from 'entities/sprintWords/sprintStateWords';
@@ -11,8 +11,8 @@ import { useSprinStateWords } from 'entities/sprintWords/sprintStateWords';
 export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
   const { sprintWords, getSprintWords, sprintLoading, setData } = useSprinStateWords();
   const [audioV, setAudioV] = useState<boolean>(true);
-  const [stateOfData, setStateofData] = useState<{}>({});
-  const [stateOfPopup, setStateOfPopup] = useState([]);
+  const [stateOfData, setStateofData] = useState<ICardResult | {}>({});
+  const [stateOfPopup, setStateOfPopup] = useState<IStateOfPopupData[]>([]);
 
   const [visiblePopup, setVisiblePopup] = useState<boolean>(false);
   const [stateOfRepeat, setStateOfRepeat] = useState<string[]>([]);
@@ -56,7 +56,6 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
         const generatePage = helperRandomChoice(29, 0, pageNumber);
         setPageNumber((prev) => [...prev, generatePage]);
         fetcherWords(lvlValue, generatePage).then((value) => {
-          console.log(value, 'in Callback');
           setData(value);
           callback(value);
         });
@@ -145,7 +144,12 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
         <div className="game__board__timer">
           <GameSprintTimer changeVisibilityPopup={setVisiblePopup} />
         </div>
-        <GameSprintCard audioV={audioV} wordObj={stateOfData} funData={renderComponentData} setStateOfPopup={setStateOfPopup} />
+        <GameSprintCard
+          audioV={audioV}
+          wordObj={stateOfData as ICardResult}
+          funData={renderComponentData}
+          setStateOfPopup={setStateOfPopup}
+        />
       </div>
     </div>
   );
