@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { basePath } from 'common/config/env.config';
-import { IStateOfPopupData } from 'common/interfaces/interfaces';
-import { Spinner } from 'common/components/Spinner';
+import { ISprintCard, IStateOfPopupData } from 'common/interfaces/interfaces';
 import correctMusic from 'app/assets/sound/correct.wav';
 import failMusic from 'app/assets/sound/fail.wav';
 
 export const GameSprintCard = (props: any) => {
-  const { audioV, wordObj, funData, setStateOfPopup, sprintLoading } = props;
+  console.log(props);
+  const { audioV, wordObj, funData, setStateOfPopup } = props;
   const { audio, word, wordTranslate, transcription, truthy, isWordReal } = wordObj;
   const [score, setScore] = useState<number>(0);
   const [scoreTrick, setScoreTrick] = useState<number>(0);
@@ -90,10 +90,6 @@ export const GameSprintCard = (props: any) => {
   const getAnimationPoint = () => {
     return <span className="card__point__add__point">+{scoreCounter}</span>;
   };
-
-  if (sprintLoading) {
-    return <Spinner />;
-  }
 
   return (
     <div className="sprint__card">

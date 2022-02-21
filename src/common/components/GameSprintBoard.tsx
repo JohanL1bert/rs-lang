@@ -9,25 +9,78 @@ import { Spinner } from 'common/components/Spinner';
 import { useSprinStateWords } from 'entities/sprintWords/sprintStateWords';
 
 export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
-  const { sprintWords, getSprintWords, sprintLoading } = useSprinStateWords();
+  const { sprintWords, getSprintWords, sprintLoading, setData } = useSprinStateWords();
   const [audioV, setAudioV] = useState<boolean>(true);
   const [stateOfData, setStateofData] = useState<{}>({});
   const [stateOfPopup, setStateOfPopup] = useState([]);
 
   const [visiblePopup, setVisiblePopup] = useState<boolean>(false);
-  /*   const [stateOfRepeat, setStateOfRepeat] = useState<string[]>([]);
-  const [randomNumber, setStateRandomNumber] = useState<number[]>([]); */
+  const [stateOfRepeat, setStateOfRepeat] = useState<string[]>([]);
+  const [pageNumber, setPageNumber] = useState<number[]>([]);
+  const [recursiveCounter, setRecursiveCounter] = useState<number[]>([]);
+
+  const cactherDeadZone = () => {
+    if (pageNumber.length === 28) {
+      setPageNumber([]);
+    }
+  };
 
   const randomPageChoice = (max: number, min: number) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
+  const helperRandomChoice = (max: number, min: number, filterData: number[]): number => {
+    let generateNumber: number;
+    do {
+      generateNumber = Math.floor(Math.random() * (max - min + 1) + min);
+    } while (filterData.includes(generateNumber));
+    return generateNumber;
+  };
+
+  const fetcherWords = async (group: number, page: number) => {
+    const response = await fetch(`${basePath}/words?group=${group}&page=${page}`, {
+      method: 'GET',
+      cache: 'no-cache',
+    });
+    return await response.json();
+  };
+
+  const filteredStateOfWord = (objData: IWord, getAllArrayOfWord: IWord[], choiceNumber: number): IWord | void => {
+    if (!stateOfRepeat.includes(objData.id)) {
+      setStateOfRepeat((prev) => [...prev, objData.id]);
+      setRecursiveCounter((prev) => [...prev, choiceNumber]);
+      return objData;
+    } else {
+      if (recursiveCounter.length === 19) {
+        setRecursiveCounter([]);
+        const generatePage = helperRandomChoice(29, 0, pageNumber);
+        setPageNumber((prev) => [...prev, generatePage]);
+        fetcherWords(lvlValue, generatePage).then((value) => {
+          console.log(value, 'in Callback');
+          setData(value);
+          callback(value);
+        });
+      } else {
+        const generateNewNumber = helperRandomChoice(getAllArrayOfWord.length - 1, 0, recursiveCounter);
+        setRecursiveCounter((prev) => [...prev, generateNewNumber]);
+        setStateOfRepeat((prev) => [...prev, getAllArrayOfWord[generateNewNumber].id]);
+        return getAllArrayOfWord[generateNewNumber];
+      }
+    }
+  };
+
   const callback = (value: IWord[]) => {
-    console.log(value, 'value', '1');
+    cactherDeadZone();
     const choiceWord: number = randomPageChoice(value.length - 1, 0);
     const fakeWord: number = randomPageChoice(value.length - 1, 0);
+
+    const getFilteredData = filteredStateOfWord(value[choiceWord], value, choiceWord);
+    if (getFilteredData === undefined) {
+      return;
+    }
+
     const valueOfTrue = randomPageChoice(1, 0);
-    const wordTrue: IWord = value[choiceWord];
+    const wordTrue: IWord = getFilteredData;
     const wordFalse: IWord = value[fakeWord];
     const {
       audio,
@@ -62,9 +115,9 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
   };
 
   useEffect(() => {
-    const randomPage = randomPageChoice(6, 1);
+    const randomPage = randomPageChoice(29, 1);
     getSprintWords(lvlValue, randomPage);
-    /*     setStateRandomNumber((prev) => [...prev, randomPage]); */
+    setPageNumber((prev) => [...prev, randomPage]);
   }, []);
 
   useEffect(() => {
@@ -92,45 +145,8 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
         <div className="game__board__timer">
           <GameSprintTimer changeVisibilityPopup={setVisiblePopup} />
         </div>
-        <GameSprintCard
-          audioV={audioV}
-          wordObj={stateOfData}
-          funData={renderComponentData}
-          setStateOfPopup={setStateOfPopup}
-          sprintLoading={sprintLoading}
-        />
+        <GameSprintCard audioV={audioV} wordObj={stateOfData} funData={renderComponentData} setStateOfPopup={setStateOfPopup} />
       </div>
     </div>
   );
 };
-
-/*   const addToFilterWords = (dataWords: any) => {
-    console.log(stateOfRepeat, 'stateofRepeat');
-    console.log(randomNumber, 'randomNumber');
-
-    if (!stateOfRepeat.includes(dataWords.id)) {
-      setStateOfRepeat((prev) => [...prev, dataWords.id]);
-    } else {
-      const choiceWord = randomPageChoice(19, 0);
-      addToFilterWords(dataWords[choiceWord]);
-    } */
-
-/*     if (!stateOfRepeat.includes(dataWords.id)) {
-      setStateOfRepeat((prev) => {
-        if (!prev.includes(dataWords.id)) {
-          [...prev, dataWords.id];
-        }
-      });
-    } else {
-      const choiceWord = randomPageChoice(20, 0);
-      addToFilterWords(dataWords[choiceWord]);
-    } */
-
-/*   const fetcherWords = async (group: number, page: number) => {
-    const response = await fetch(`${basePath}/words?group=${group}&page=${page}`, {
-      method: 'GET',
-      cache: 'no-cache',
-    });
-    return await response.json();
-  };
- */

@@ -63,3 +63,9 @@ export interface ICanvasStat {
 export interface ISprintStat {
   dataOfStats: Array<IStateOfPopupData>;
 }
+
+export interface ISprintCard {
+  audioV: string;
+  funData: () => void;
+  setStateOfPopup: React.Dispatch<React.SetStateAction<boolean>>;
+}

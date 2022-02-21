@@ -7,12 +7,11 @@ import { ICanvasStat, ISprintStat, IStateOfPopupData } from 'common/interfaces/i
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 export const GameSprintStatistic = (props: ISprintStat) => {
-  console.log(props);
   const { dataOfStats } = props;
 
   const filterProps = () => {
-    const fail = dataOfStats.filter((item: IStateOfPopupData) => item.isCorrectChoice);
-    const corr = dataOfStats.filter((item: IStateOfPopupData) => item.isCorrectChoice === false);
+    const fail = dataOfStats.filter((item: IStateOfPopupData) => item.isCorrectChoice === false);
+    const corr = dataOfStats.filter((item: IStateOfPopupData) => !!item.isCorrectChoice);
 
     return [fail, corr];
   };

@@ -1,11 +1,13 @@
 import create from 'zustand';
 import { basePath } from 'common/config/env.config';
+import { IWord } from 'common/interfaces/interfaces';
 import { responseCatch } from 'entities/responseStatus';
 
 interface ISprintWords {
   sprintLoading: boolean;
-  sprintWords: [];
+  sprintWords: IWord[];
   getSprintWords: (group: number, page: number) => void;
+  setData: (array: Array<IWord>) => void;
 }
 
 export const useSprinStateWords = create<ISprintWords>((set) => ({
@@ -28,4 +30,5 @@ export const useSprinStateWords = create<ISprintWords>((set) => ({
       }
     }
   },
+  setData: (array: IWord[]) => set({ sprintWords: array }),
 }));
