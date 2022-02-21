@@ -114,7 +114,7 @@ export const GameSprintBoard = ({ lvlValue }: { lvlValue: number }) => {
   };
 
   useEffect(() => {
-    const randomPage = randomPageChoice(29, 1);
+    const randomPage = randomPageChoice(29, 0);
     getSprintWords(lvlValue, randomPage);
     setPageNumber((prev) => [...prev, randomPage]);
   }, []);
