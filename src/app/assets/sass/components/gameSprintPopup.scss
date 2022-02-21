@@ -15,15 +15,9 @@
     background-color: whitesmoke;
   }
 
-  &__result {
-  }
-  &__header {
-  }
-
   &__statistic {
     width: 400px;
     height: 400px;
-    /* border: 1px solid black; */
   }
 
   &__toggle {
@@ -72,17 +66,13 @@
   &__checkbox:checked + &__slider:before {
     transform: translateX(26px);
   }
+
   &__checkbox:checked + &__slider {
     background-color: rgb(148, 148, 196);
   }
 }
 
 .sprint {
-  &__statistic__inner {
-  }
-  &__items {
-  }
-
   &__item {
     display: flex;
     align-items: center;
@@ -94,7 +84,7 @@
     background-color: rgb(248, 247, 247);
 
     &__sound {
-      margin-left: 10px;
+      margin-left: 2%;
       background-image: url('../../images/volumeTranslate.png');
       width: 30px;
       height: 30px;
@@ -104,17 +94,21 @@
     }
 
     &__word {
+      padding-left: 1%;
       width: 100px;
+      white-space: pre-wrap;
     }
+
     &__transcription {
       width: 100px;
+      white-space: pre-wrap;
     }
-    &__translate {
-    }
+
     &__correct {
       @include correctBtn;
       background-image: url('../../images/correct.png');
     }
+
     &__incorrect {
       @include correctBtn;
       background-image: url('../../images/fail.png');

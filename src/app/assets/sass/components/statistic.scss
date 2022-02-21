@@ -16,8 +16,6 @@
       margin-top: 100px;
     }
 
-    &__today {
-    }
     &__inner {
       display: flex;
       justify-content: space-evenly;
@@ -35,6 +33,7 @@
         justify-content: center;
         align-items: center;
       }
+
       &__percent {
         width: 250px;
         height: 300px;
@@ -44,17 +43,6 @@
         justify-content: center;
         align-items: center;
       }
-    }
-  }
-
-  &__result {
-    &__correct__words {
-    }
-    &__sprint {
-    }
-    &__audio {
-    }
-    &__all__time {
     }
   }
 }

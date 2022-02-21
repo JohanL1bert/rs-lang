@@ -79,3 +79,7 @@ export interface ISprintCard {
   setStateOfPopup: React.Dispatch<React.SetStateAction<IStateOfPopupData[]>>;
   wordObj: ICardResult;
 }
+
+export interface ISprintPopup {
+  data: Array<IStateOfPopupData>;
+}

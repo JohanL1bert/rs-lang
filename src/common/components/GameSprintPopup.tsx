@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { basePath } from 'common/config/env.config';
 import { GameSprintStatistic } from 'common/components/GameSprintStatistic';
+import { ISprintPopup, IStateOfPopupData } from 'common/interfaces/interfaces';
 
-export const GameSprintPopup = (props: any) => {
+export const GameSprintPopup = (props: ISprintPopup) => {
   const [isToggled, setIsToggled] = useState<boolean>(true);
   const { data } = props;
 
@@ -32,7 +33,7 @@ export const GameSprintPopup = (props: any) => {
             <div className="sprint__popup__statistic">
               <ul className="sprint__items">
                 {data.length > 0
-                  ? data.map((item: any, i: number) => (
+                  ? data.map((item: IStateOfPopupData, i: number) => (
                       <li key={i} className="sprint__item">
                         <p className="sprint__item__sound" onClick={() => wordSound(item.audio)}></p>
                         <p className="sprint__item__word">{item.word}</p>
