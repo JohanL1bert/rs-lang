@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
         <div className={isOpen ? 'header__menu-icon header__menu-icon_active' : 'header__menu-icon'} onClick={toggleMenu}>
           <span></span>
         </div>
-        <Link to="/">RSLang</Link>
+        <Link to="/home">RSLang</Link>
       </div>
       <div className={isOpen ? 'header__nav header__nav_active' : 'header__nav'}>
         <ul>
