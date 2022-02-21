@@ -1,0 +1,70 @@
+.footer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-gray;
+  color: $color-gray-dark;
+
+  &__developers {
+    &__title {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
+
+      @media (max-width: 455px) {
+        font-size: 12px;
+      }
+    }
+
+    &__image {
+      background-image: url('../../images/svg/github.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+    }
+
+    &__items {
+      margin-top: 10px;
+    }
+
+    &__item {
+      margin: 6px 0;
+    }
+
+    & a {
+      font-size: 14px;
+      color: $color-gray-dark;
+
+      @media (max-width: 455px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 14px;
+
+    @media (max-width: 455px) {
+      font-size: 12px;
+    }
+  }
+
+  &__logo {
+    & a {
+      width: 100px;
+      height: 40px;
+      display: block;
+      background-image: url('../../images/svg/rs_school_js.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @media (max-width: 455px) {
+        width: 60px;
+        height: 30px;
+      }
+    }
+  }
+}

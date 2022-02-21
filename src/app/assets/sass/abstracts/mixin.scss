@@ -1,0 +1,57 @@
+@mixin box-shadow-card {
+  -webkit-box-shadow: 1px 3px 8px 6px rgba(34, 60, 80, 0.22);
+  -moz-box-shadow: 1px 3px 8px 6px rgba(34, 60, 80, 0.22);
+  box-shadow: 1px 3px 8px 6px rgba(34, 60, 80, 0.22);
+}
+
+@mixin butttonSprintLevel {
+  position: relative;
+  appearance: none;
+  box-sizing: border-box;
+  font-size: calc(2.5rem / 3);
+  font-family: 'Open Sans', sans-serif;
+  height: 30px;
+  min-width: 30px;
+  border-radius: calc(2.5rem / 2);
+  border: 1px solid white;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  margin: 6px 6px;
+  letter-spacing: 0.1em;
+  transition: all 200ms ease;
+}
+
+@mixin borderResult {
+  border: 1px solid black;
+}
+
+@mixin correctBtn {
+  margin-left: auto;
+  margin-right: 2%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+@function colorBoxShadow($firstColor, $secondColor, $thirdColor, $shadow) {
+  @return (
+    -1px -1px 1px $firstColor,
+    0 0 0 4px $shadow,
+    1px 1px 1px $secondColor,
+    inset 0 0 0 rgba(0, 0, 0, 0.2),
+    inset 0.5rem 0.5rem 0.25rem $thirdColor
+  );
+}
+
+@function colorBoxShadowActive($firstColor, $secondColor, $thirdColor) {
+  @return (
+    inset 1px 1px 1px $firstColor,
+    0 0 0 4px rgba(0, 0, 0, 0.1),
+    inset -1px -1px 1px $secondColor,
+    inset 0.5rem 0.5rem 0.75rem $thirdColor,
+    inset 0.5rem 0.5rem 0.5rem rgba(255, 255, 255, 0.2)
+  );
+}

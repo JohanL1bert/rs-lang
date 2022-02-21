@@ -1,0 +1,60 @@
+.advantages {
+  background-color: #f7f7f7;
+
+  &__inner {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+
+  &__section {
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 700px;
+    }
+  }
+
+  &__inner__text {
+    position: relative;
+    top: 25%;
+  }
+
+  &__text {
+    max-height: 900px;
+    width: 619px;
+
+    &__img {
+      margin-top: 50px;
+      background-image: url('../../images/book1.jpg');
+      height: 600px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media (max-width: 1370px) {
+  .advantages {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 655px) {
+  .advantages {
+    &__text {
+      width: 100%;
+
+      &__img {
+        height: 216px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

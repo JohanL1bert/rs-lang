@@ -1,0 +1,49 @@
+.sprint__timer {
+  width: 160px;
+  height: 160px;
+  position: relative;
+
+  &__outer {
+    background-color: aliceblue;
+    z-index: -1;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+  }
+
+  &__inner {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    top: 12%;
+    left: 12%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+      -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  }
+
+  &__clock {
+    color: black;
+  }
+
+  &__svg {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 439.8;
+    stroke-dashoffset: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: anim 60s linear forwards;
+  }
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 439.8;
+  }
+}

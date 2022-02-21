@@ -1,0 +1,121 @@
+.level-switch {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $screen-md) {
+    column-gap: 10px;
+  }
+
+  &__item,
+  &__filter-item {
+    position: relative;
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 1px solid $color-gray-dark;
+    font-size: $fontSize-sm;
+    cursor: pointer;
+
+    @media (max-width: 1250px) {
+      width: 160px;
+      height: 40px;
+      font-size: $fontSize-xxs;
+    }
+    @media (max-width: $screen-md) {
+      width: 100%;
+      height: 40px;
+      font-size: $fontSize-xxs;
+    }
+
+    &_char {
+      width: 50px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $fontFamily-Montserrat-Regular;
+      font-size: $fontSize-lg;
+      font-weight: bold;
+      text-transform: capitalize;
+
+      @media (max-width: 1250px) {
+        width: 40px;
+        height: 38px;
+        font-size: $fontSize-sm;
+      }
+
+      @media (max-width: $screen-md) {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(1) &_char {
+      background-color: #cd5c5c;
+    }
+
+    &:nth-child(2) &_char {
+      background-color: #ffa500;
+    }
+
+    &:nth-child(3) &_char {
+      background-color: yellow;
+    }
+
+    &:nth-child(4) &_char {
+      background-color: #90ee90;
+    }
+
+    &:nth-child(5) &_char {
+      background-color: #00bfff;
+    }
+
+    &:nth-child(6) &_char {
+      background-color: #4169e1;
+    }
+
+    &_title {
+      margin-left: 10px;
+
+      @media (max-width: $screen-md) {
+        display: none;
+      }
+    }
+
+    &_disabled {
+      filter: grayscale(100%);
+      opacity: 0.6;
+    }
+
+    &:hover {
+      filter: none;
+      opacity: 1;
+    }
+  }
+
+  &__filter {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    @media (max-width: $screen-md) {
+      column-gap: 4px;
+    }
+
+    &-item {
+      padding: 0 10px;
+
+      @media (max-width: $screen-md) {
+        padding: 0 4px;
+      }
+    }
+
+    &-item-active {
+      background-color: $color-gray;
+    }
+  }
+}
