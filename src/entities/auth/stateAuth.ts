@@ -1,5 +1,5 @@
-import { basePath } from 'common/config/env.config';
 import create from 'zustand';
+import { basePath } from 'common/config/env.config';
 import { INewUser, IStateAuth } from 'entities/auth/stateAuthTypes';
 
 const headers = {
