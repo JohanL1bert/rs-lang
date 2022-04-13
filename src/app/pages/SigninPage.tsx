@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useStateAuth } from 'entities/auth/stateAuth';
 
-export const SigninPage: React.FC = () => {
+export const SigninPage = () => {
   const [content, setContent] = useState<string>('signin');
   const [email, setEmail] = useState<string>('');
   const [name, setName] = useState<string>('');
