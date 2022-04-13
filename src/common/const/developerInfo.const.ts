@@ -1,6 +1,5 @@
 import vsmaliakouImg from 'app/assets/images/vsmaliakou1.png';
 import johanImg from 'app/assets/images/johan.png';
-import viktorImg from 'app/assets/images/user.png';
 
 export const developerInfo = [
   {
@@ -10,14 +9,6 @@ export const developerInfo = [
     role: 'Team Lead, FrontEnd Developer',
     description: 'Учебник, словарь, авторизация',
     link: 'https://github.com/vsmaliakou',
-  },
-  {
-    id: 2,
-    name: 'Viktor Abibok',
-    imgPath: viktorImg,
-    role: 'FrontEnd Developer',
-    description: 'Backend',
-    link: 'https://github.com/igrekinlapland',
   },
   {
     id: 3,

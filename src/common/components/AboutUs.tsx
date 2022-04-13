@@ -2,7 +2,7 @@ import React from 'react';
 import { developerInfo } from 'common/const/developerInfo.const';
 import { AboutCard } from 'common/components/AboutCard';
 
-export const AboutUs: React.FC = () => {
+export const AboutUs = () => {
   return (
     <section className="about">
       <div className="container">
