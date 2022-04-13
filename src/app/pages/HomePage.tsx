@@ -4,7 +4,7 @@ import { AboutUs } from 'common/components/AboutUs';
 import { Intro } from 'common/components/Intro';
 // import { Youtube } from 'common/components/Youtube';
 
-export const HomePage: React.FC = () => {
+export const HomePage = () => {
   return (
     <main>
       <Intro></Intro>

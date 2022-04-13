@@ -10,6 +10,7 @@ export const GameSprintSelectLvl: React.FC = () => {
   const [visibleSetting, setVisibleSetting] = useState(false);
   const [lvlDifficulty, setLevelDifficulty] = useState<number>(0);
   const location = useLocation();
+
   const state = location.state as IComponentProps;
   const group = state ? state.group : undefined;
 
