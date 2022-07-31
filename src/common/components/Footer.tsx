@@ -16,11 +16,6 @@ export const Footer: React.FC = () => {
               </a>
             </li>
             <li className="footer__developers__item">
-              <a href="https://github.com/igrekinlapland" target="_blank" rel="noreferrer">
-                igrekinlapland
-              </a>
-            </li>
-            <li className="footer__developers__item">
               <a target="_blank" href="https://github.com/JohanL1bert" rel="noreferrer">
                 JohanL1bert
               </a>
@@ -28,9 +23,6 @@ export const Footer: React.FC = () => {
           </ul>
         </div>
         <div className="footer__copyright">@copyright 2022</div>
-        <div className="footer__logo">
-          <a href="https://rs.school/index.html" target="_blank" rel="noreferrer"></a>
-        </div>
       </div>
     </footer>
   );

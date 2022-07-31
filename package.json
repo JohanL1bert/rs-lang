@@ -1,7 +1,7 @@
 {
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://vsmaliakou.github.io/rslang",
+  "homepage": "https://johanl1bert.github.io/rs-lang/",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "chart.js": "^3.7.1",
