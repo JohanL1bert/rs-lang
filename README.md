@@ -1,6 +1,6 @@
 # rslang
 
-Backend repository [reference](https://github.com/iGrekInLapland/react-rslang-be)
+Backend repository [reference](https://github.com/JohanL1bert/react-rslang-be)
 
 ## Deploy
 

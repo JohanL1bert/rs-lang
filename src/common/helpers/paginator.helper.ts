@@ -14,7 +14,6 @@ const range = (start: number, end: number) => {
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
-// Implementation Description https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
 export const usePagination = ({ totalCount, pageSize, siblingCount = 1, currentPage }: IPaginatorParams) => {
   return useMemo(() => {
     const totalPageCount = Math.ceil(totalCount / pageSize);
