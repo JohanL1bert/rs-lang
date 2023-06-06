@@ -91,9 +91,9 @@ export const SigninPage = () => {
               </p>
             ) : (
               <p>
-                Уже с нами?
+                Уже з нами?
                 <a className="signin-page__link" onClick={() => setContent('signin')}>
-                  Войти
+                  Ввійти
                 </a>
               </p>
             )}
