@@ -27,7 +27,7 @@ export const ContentSwitcher: React.FC<IComponentProps> = (props) => {
             className={`content-switcher__btn ${content === 'textbook' && 'content-switcher__btn-active'}`}
             onClick={() => setContent('textbook')}
           >
-            Учебник
+            Підручник
           </button>
           <div className="content-switcher__separator"></div>
           {isAuth && (
@@ -35,13 +35,13 @@ export const ContentSwitcher: React.FC<IComponentProps> = (props) => {
               className={`content-switcher__btn ${content === 'dictionary' && 'content-switcher__btn-active'}`}
               onClick={() => setContent('dictionary')}
             >
-              Словарь
+              Словник
             </button>
           )}
           <div className="content-switcher__settings">
             <button className="content-switcher__settings-btn" onClick={togglePopup}></button>
             <div className={`content-switcher__popup ${isOpen && 'content-switcher__popup_visible'}`}>
-              <p className="content-switcher__popup_title">Настройки</p>
+              <p className="content-switcher__popup_title">Налаштування</p>
               <div className="content-switcher__popup_check">
                 <input
                   className="content-switcher__popup_checkbox"
@@ -51,7 +51,7 @@ export const ContentSwitcher: React.FC<IComponentProps> = (props) => {
                   checked={isVisibleTranslation}
                 />
                 <label className="content-switcher__popup_pseudo-label" htmlFor="textbookPopup"></label>
-                <span className="content-switcher__popup_label">Отображать перевод слова и перевод предложений?</span>
+                <span className="content-switcher__popup_label">Відображати переклад слова та переклад речень?</span>
               </div>
             </div>
           </div>

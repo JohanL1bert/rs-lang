@@ -62,14 +62,14 @@ export const Presentation: React.FC<IComponentProps> = (props) => {
           <PresentationBtn group={group} title="удалить слово" onClick={addWordToRemote} />
         </div>
       )}
-      <p className="presentation__meaning">Значение</p>
+      <p className="presentation__meaning">Значення</p>
       <div className="presentation__transcription">
         <button className="presentation__play" onClick={() => play(1)}></button>
         {/* eslint-disable-next-line */}
         <span dangerouslySetInnerHTML={{ __html: word.textMeaning }}></span>
       </div>
       <p className={!isVisibleTranslation ? 'unvisible' : ''}>{word.textMeaningTranslate}</p>
-      <p className="presentation__meaning">Перевод</p>
+      <p className="presentation__meaning">Переклад</p>
       <div className="presentation__transcription">
         <button className="presentation__play" onClick={() => play(2)}></button>
         {/* eslint-disable-next-line */}

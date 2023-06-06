@@ -21,7 +21,7 @@ export const GameSprintPopup = (props: ISprintPopup) => {
       {
         <div className="sprint__popup__inner">
           <div className="sprint__popup__result">
-            <h2 className="sprint__popup__header">Результат игры:</h2>
+            <h2 className="sprint__popup__header">Результат гри:</h2>
             <div className="sprint__popup__toggle">
               <label className="sprint__popup__switch">
                 <input type="checkbox" className="sprint__popup__checkbox" />

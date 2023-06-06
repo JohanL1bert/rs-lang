@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
       <div className="footer">
         <div className="footer__developers">
           <div className="footer__developers__title">
-            Разработчики
+            Розробники
             <div className="footer__developers__image"></div>
           </div>
           <ul className="footer__developers__items">
