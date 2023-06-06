@@ -50,50 +50,50 @@ export const SigninPage = () => {
       <div className="signin-page__bg">
         <div className="container">
           <div className="signin-page__title">
-            <h1>{content === 'signin' ? 'Вход' : 'Регистрация'}</h1>
+            <h1>{content === 'signin' ? 'Вхід' : 'Реєстрація'}</h1>
           </div>
         </div>
       </div>
       <div className="container">
         <div className="signin-page">
           <div className={`signin-page__error ${(error || localError || passwordError) && 'signin-page__error-visible'}`}>
-            {content === 'registration' && localError && 'Пароли должны совпадать'}
-            {content === 'registration' && error && 'Пользователь с таким email уже существует'}
-            {content === 'signin' && 'Неверный email или пароль'}
-            {passwordError && 'Пароль должен быть не менее 8 символов'}
+            {content === 'registration' && localError && 'Паролі повинні співпадати'}
+            {content === 'registration' && error && 'Користувач з таким email вже існує'}
+            {content === 'signin' && 'Невірний email чи пароль'}
+            {passwordError && 'Пароль повинен бути не менше 8 символів'}
           </div>
           <form className="signin-page__form" onSubmit={onSubmit}>
             <input className="signin-page__form-item" type="email" placeholder="email" onChange={changeEmail} />
             {content === 'registration' && (
-              <input className="signin-page__form-item" type="text" placeholder="имя" onChange={changeName} />
+              <input className="signin-page__form-item" type="text" placeholder="ім'я" onChange={changeName} />
             )}
             <input className="signin-page__form-item" type="password" placeholder="пароль" onChange={changePassword} min={8} />
             {content === 'registration' && (
               <input
                 className="signin-page__form-item"
                 type="password"
-                placeholder="подтвердить пароль"
+                placeholder="підветрдити пароль"
                 onChange={changeRepeatPassword}
                 min={8}
               />
             )}
             {content === 'signin' ? (
-              <button className="signin-page__form-btn">Войти</button>
+              <button className="signin-page__form-btn">Ввійти</button>
             ) : (
-              <button className="signin-page__form-btn">Зарегистрироваться</button>
+              <button className="signin-page__form-btn">Зареєструватись</button>
             )}
             {content === 'signin' ? (
               <p>
-                Еще не с нами? Тогда{' '}
+                Ще не з нами? Тоді{' '}
                 <a className="signin-page__link" onClick={() => setContent('registration')}>
-                  зарегистрируйтесь
+                  зареєструйтесь
                 </a>
               </p>
             ) : (
               <p>
-                Уже с нами?
+                Уже з нами?
                 <a className="signin-page__link" onClick={() => setContent('signin')}>
-                  Войти
+                  Ввійти
                 </a>
               </p>
             )}

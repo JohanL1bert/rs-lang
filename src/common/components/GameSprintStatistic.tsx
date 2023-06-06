@@ -19,7 +19,7 @@ export const GameSprintStatistic = (props: ISprintStat) => {
   const [inCorrect, correct] = filterProps();
 
   const data: ICanvasStat = {
-    labels: ['Не правильно', 'Правильно'],
+    labels: ['Неправильно', 'Правильно'],
     datasets: [
       {
         data: [inCorrect.length, correct.length],

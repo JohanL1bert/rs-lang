@@ -25,10 +25,10 @@ export const GameSprintSelectLvl: React.FC = () => {
         !visibleSetting ? (
           <div className="sprint__level__inner">
             <div className="sprint__level__wrapper">
-              <p className="sprint__level__description">Игра начнется с текущими словами из словаря</p>
+              <p className="sprint__level__description">Гра розпочнеться з поточними словами зі словника</p>
               <div className="sprint__level__items">
                 <button className="sprint__level__btn" onClick={() => goToGame(group)}>
-                  Начать
+                  Почати
                 </button>
               </div>
             </div>
@@ -39,26 +39,26 @@ export const GameSprintSelectLvl: React.FC = () => {
       ) : !visibleSetting ? (
         <div className="sprint__level__inner">
           <div className="sprint__level__wrapper">
-            <h3 className="sprint__level__header">Выберите сложность</h3>
-            <p className="sprint__level__description">Описание: уровень влияет на сложность слов, которые попадаются</p>
+            <h3 className="sprint__level__header">Вибрати складність</h3>
+            <p className="sprint__level__description">Опис: рівень впливає на складність слів, які трапляються</p>
             <div className="sprint__level__items">
               <button className="sprint__level__btn" onClick={() => goToGame(0)}>
-                1 Уровень
+                1 Рівень
               </button>
               <button className="sprint__level__btn" onClick={() => goToGame(1)}>
-                2 Уровень
+                2 Рівень
               </button>
               <button className="sprint__level__btn" onClick={() => goToGame(2)}>
-                3 Уровень
+                3 Рівень
               </button>
               <button className="sprint__level__btn" onClick={() => goToGame(3)}>
-                4 Уровень
+                4 Рівень
               </button>
               <button className="sprint__level__btn" onClick={() => goToGame(4)}>
-                5 Уровень
+                5 Рівень
               </button>
               <button className="sprint__level__btn" onClick={() => goToGame(5)}>
-                6 Уровень
+                6 Рівень
               </button>
             </div>
           </div>
