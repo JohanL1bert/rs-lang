@@ -60,16 +60,16 @@ export const TextbookPage: React.FC = () => {
             filter={filter}
           />
         ) : (
-          <p>В этом разделе еще нет слов</p>
+          <p>В цьому розділі ще не існує слів</p>
         )}
       </div>
       <div className="container">
         <div className="textbook-page__games">
-          <p className="page__subtitle">Игры</p>
+          <p className="page__subtitle">Ігри</p>
           <div className="textbook-page__games_container">
             <div className="textbook-page__games_item">
               <img className="textbook-page__games_item-img" src={audio} alt="audio game" />
-              <p className="textbook-page__games_item-title">Аудиовызов</p>
+              <p className="textbook-page__games_item-title">Аудіовиклик</p>
               <p className="textbook-page__games_item-description">description</p>
             </div>
             <div className="textbook-page__games_item" onClick={moveToSprint}>
