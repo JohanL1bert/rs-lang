@@ -7,7 +7,7 @@ export const developerInfo = [
     name: 'Vitali Smaliakou',
     imgPath: vsmaliakouImg,
     role: 'Team Lead, FrontEnd Developer',
-    description: 'Учебник, словарь, авторизация',
+    description: 'Підручник, словник, авторизація',
     link: 'https://github.com/vsmaliakou',
   },
   {
@@ -15,7 +15,7 @@ export const developerInfo = [
     name: 'Roman Radiushyn',
     imgPath: johanImg,
     role: 'FrontEnd Developer',
-    description: 'Начальная страница, игра Спринт',
+    description: 'Початкова сторінка, гра Спринт',
     link: 'https://github.com/JohanL1bert',
   },
 ];

@@ -35,11 +35,11 @@ export const Header: React.FC = () => {
           })}
           {!isAuth ? (
             <li className="header__nav_link">
-              <Link to="signin">Войти</Link>
+              <Link to="signin">Ввійти</Link>
             </li>
           ) : (
             <li className="header__nav_link">
-              <button onClick={signout}>Выйти</button>
+              <button onClick={signout}>Вийти</button>
             </li>
           )}
         </ul>

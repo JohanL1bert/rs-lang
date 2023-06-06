@@ -40,19 +40,19 @@ export const LevelSwitch: React.FC<IComponentProps> = (props) => {
             className={`level-switch__filter-item ${filter === '{"userWord.difficulty":"studied"}' && commonClassName}`}
             onClick={() => setFilter('{"userWord.difficulty":"studied"}')}
           >
-            <span>Изучаемые</span>
+            <span>Досліджувані</span>
           </div>
           <div
             className={`level-switch__filter-item ${filter === '{"userWord.difficulty":"difficult"}' && commonClassName}`}
             onClick={() => setFilter('{"userWord.difficulty":"difficult"}')}
           >
-            <span>Сложные</span>
+            <span>Тяжкі</span>
           </div>
           <div
             className={`level-switch__filter-item ${filter === '{"userWord.optional.isDeleted":"true"}' && commonClassName}`}
             onClick={() => setFilter('{"userWord.optional.isDeleted":"true"}')}
           >
-            <span>Удаленные</span>
+            <span>Видалені</span>
           </div>
         </div>
       )}
