@@ -58,8 +58,8 @@ export const Presentation: React.FC<IComponentProps> = (props) => {
       </div>
       {isAuth && content === 'textbook' && (
         <div className="presentation__btns">
-          <PresentationBtn group={group} title="в сложные слова" onClick={addToDifficult} />
-          <PresentationBtn group={group} title="удалить слово" onClick={addWordToRemote} />
+          <PresentationBtn group={group} title="в складні слова" onClick={addToDifficult} />
+          <PresentationBtn group={group} title="видалити слово" onClick={addWordToRemote} />
         </div>
       )}
       <p className="presentation__meaning">Значення</p>
