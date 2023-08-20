@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
-        <div className="footer__copyright">@copyright 2022</div>
+        <div className="footer__copyright">@copyright &&</div>
       </div>
     </footer>
   );
