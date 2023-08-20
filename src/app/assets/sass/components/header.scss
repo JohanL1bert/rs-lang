@@ -15,6 +15,10 @@
     linear-gradient(-45deg, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 52%);
   background-size: 2.5px 2.5px;
 
+  &__games {
+    background: #d1dae8;
+  }
+
   &__bg {
     background: $color-white;
   }
