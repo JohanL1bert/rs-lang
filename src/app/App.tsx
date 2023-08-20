@@ -9,11 +9,11 @@ import { SigninPage } from 'app/pages/SigninPage';
 import { useStateAuth } from 'entities/auth/stateAuth';
 
 export const App: React.FC = () => {
-  const { auth } = useStateAuth();
+  const { auth, isAuth } = useStateAuth();
 
   useEffect(() => {
     auth();
-  }, []);
+  }, [isAuth]);
 
   return (
     <div className="app">
