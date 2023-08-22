@@ -1,10 +1,11 @@
 .footer {
-  padding: 20px;
+  padding: 20px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: $color-gray;
   color: $color-gray-dark;
+  /*   background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%); */
 
   &__developers {
     &__title {
@@ -12,6 +13,7 @@
       align-items: center;
       font-size: 14px;
       font-weight: bold;
+      gap: 10px;
 
       @media (max-width: 455px) {
         font-size: 12px;
