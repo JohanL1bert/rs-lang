@@ -16,9 +16,9 @@ interface IComponentProps {
 
 export const Presentation: React.FC<IComponentProps> = (props) => {
   const { group, word, isVisibleTranslation, audio, content } = props;
+  const [isLoadImg, setIsLoadImg] = useState<boolean>(true);
   const { user, token, isAuth } = useStateAuth();
   const { addToDifficulty, addToRemote } = useStateWords();
-  const [isLoadingImg, setIsLoadingImg] = useState(false);
 
   const play = (idx: number) => {
     audio.forEach((item) => {
@@ -44,6 +44,8 @@ export const Presentation: React.FC<IComponentProps> = (props) => {
     }
   };
 
+  console.log(isLoadImg);
+
   // FIXME: loading img
   return (
     <div className="presentation">
@@ -57,11 +59,13 @@ export const Presentation: React.FC<IComponentProps> = (props) => {
               <span>{word.transcription}</span>
             </div>
           </div>
-          <div
-            className="presentation__img"
-            style={{ backgroundImage: isLoadingImg ? `url(${basePath}/${word.image})` : `url(none)` }}
-            onLoad={() => setIsLoadingImg(true)}
-          ></div>
+          <div className="presentation__inner__img" style={{ display: isLoadImg ? 'none' : 'block' }}>
+            <div
+              className="presentation__img"
+              style={{ backgroundImage: `url(${basePath}/${word.image})` }}
+              onLoad={() => setIsLoadImg(false)}
+            ></div>
+          </div>
         </div>
         {isAuth && content === 'textbook' && (
           <div className="presentation__btns">

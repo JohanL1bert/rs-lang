@@ -29,7 +29,7 @@ module.exports = {
     'eol-last': 1,
     eqeqeq: 1,
     'no-bitwise': 1,
-    'no-console': 0, //TODO fix
+    'no-console': 0,
     'no-caller': 1,
     'no-eval': 1,
     'no-multiple-empty-lines': 1,
@@ -120,8 +120,11 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 0, //TODO fix
 
     'sonarjs/cognitive-complexity': 0, //TODO fix
-    "prettier/prettier": ["error", {
-      "endOfLine":"auto"
-    }],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };

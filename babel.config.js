@@ -8,12 +8,12 @@ module.exports = {
         alias: {
           entities: './dist_client/entities',
           app: './dist_client/app',
-          common: './dist_client/common'
-        }
-      }
+          common: './dist_client/common',
+        },
+      },
     ],
     '@babel/plugin-proposal-class-properties',
     'react-loadable/babel',
-    'dynamic-import-node'
-  ]
+    'dynamic-import-node',
+  ],
 };
