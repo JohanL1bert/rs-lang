@@ -12,6 +12,7 @@ export interface IInfoGames {
   title: string;
   description: string;
   img: string;
+  location: string | null;
 }
 
 export interface IWord {
