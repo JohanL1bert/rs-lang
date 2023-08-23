@@ -9,7 +9,7 @@ export interface INewUser {
   email: string;
   password: string;
 }
-  
+
 export interface IStateAuth {
   user: IUser | null;
   token: string;

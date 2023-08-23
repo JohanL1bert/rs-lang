@@ -16,8 +16,6 @@ export const Header: React.FC = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // ${isChanged && 'header__bg'} ${isLocation && 'header__games'}
-
   return (
     <header className={`header ${isChanged && 'header__bg'} ${isLocation && 'header__games'} `}>
       <div className="header__logo">

@@ -62,6 +62,7 @@ export const useStateWords = create<IStateWords>((set) => ({
         }
       );
       const data = await response.json();
+      console.log(data, 'data aggregatedWords');
       set({ words: data[0].paginatedResults, totalCount: data[0].totalCount[0]?.count, loading: false });
     } catch (error) {
       console.log(error);
