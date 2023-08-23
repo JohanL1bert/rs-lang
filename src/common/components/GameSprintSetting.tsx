@@ -33,8 +33,12 @@ export const GameSprintSetting: React.FC<ISetAudio> = (props) => {
   return (
     <div className="sprint__setting">
       <div className="sprint__setting__inner">
-        <div className="sprint__setting__music" style={{ backgroundImage: `url(${imageSound})` }} onClick={changeMusic}></div>
-        <div className="sprint__setting__fullscreen" onClick={changeFullScreen}></div>
+        <div className="sprint__setting__wrapper">
+          <div className="sprint__setting__music" style={{ backgroundImage: `url(${imageSound})` }} onClick={changeMusic}>
+            <span className="sprint__setting__music__tooltip">Music work only for setting correct or incorrect choices</span>
+          </div>
+          <div className="sprint__setting__fullscreen" onClick={changeFullScreen}></div>
+        </div>
       </div>
     </div>
   );

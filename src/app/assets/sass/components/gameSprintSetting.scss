@@ -1,10 +1,23 @@
 .sprint__setting {
   &__inner {
-    padding-top: 50px;
-    padding-right: 50px;
+    margin-top: 60px;
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__wrapper {
+    background-color: rgb(116, 72, 15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    gap: 30px;
+    max-width: 115px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10%;
   }
 
   &__fullscreen {
@@ -28,5 +41,34 @@
     height: 35px;
     width: 35px;
     cursor: pointer;
+
+    position: relative;
+    display: inline-block;
+
+    &:hover &__tooltip {
+      visibility: visible;
+      transition-delay: 0.3s;
+      opacity: 1;
+    }
+
+    &__tooltip {
+      visibility: hidden;
+      display: inline-block;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 0.25em;
+      white-space: wrap;
+
+      pointer-events: none;
+
+      position: absolute;
+      z-index: 15;
+      top: 120%;
+      left: -300%;
+      opacity: 0;
+      transition: opacity 500ms ease 0s, visibility 500ms ease 0s;
+      user-select: none;
+    }
   }
 }
