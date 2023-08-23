@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IWord } from 'common/interfaces/interfaces';
 import { basePath } from 'common/config/env.config';
 import { PresentationBtn } from 'common/components/PresentationBtn';
+import { useLoaderBgImage } from 'common/hooks/useLoaderBgImage';
+import { SkeletonTextBookImg } from 'common/skeleton/SkeletonTextBookImg';
 import { useStateWords } from 'entities/words/stateWords';
 import { useStateAuth } from 'entities/auth/stateAuth';
 
@@ -12,11 +14,11 @@ interface IComponentProps {
   audio: HTMLAudioElement[];
   content: string;
   filter: string;
+  loaderImg: any;
 }
 
 export const Presentation: React.FC<IComponentProps> = (props) => {
-  const { group, word, isVisibleTranslation, audio, content } = props;
-  const [isLoadImg, setIsLoadImg] = useState<boolean>(true);
+  const { group, word, isVisibleTranslation, audio, content, loaderImg } = props;
   const { user, token, isAuth } = useStateAuth();
   const { addToDifficulty, addToRemote } = useStateWords();
 
@@ -44,9 +46,6 @@ export const Presentation: React.FC<IComponentProps> = (props) => {
     }
   };
 
-  console.log(isLoadImg);
-
-  // FIXME: loading img
   return (
     <div className="presentation">
       <div className="presentation__border">
@@ -59,13 +58,11 @@ export const Presentation: React.FC<IComponentProps> = (props) => {
               <span>{word.transcription}</span>
             </div>
           </div>
-          <div className="presentation__inner__img" style={{ display: isLoadImg ? 'none' : 'block' }}>
-            <div
-              className="presentation__img"
-              style={{ backgroundImage: `url(${basePath}/${word.image})` }}
-              onLoad={() => setIsLoadImg(false)}
-            ></div>
-          </div>
+          {loaderImg ? (
+            <div className="presentation__img" style={{ backgroundImage: `url(${loaderImg})` }}></div>
+          ) : (
+            <SkeletonTextBookImg></SkeletonTextBookImg>
+          )}
         </div>
         {isAuth && content === 'textbook' && (
           <div className="presentation__btns">

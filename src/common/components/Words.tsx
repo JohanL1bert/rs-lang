@@ -3,6 +3,7 @@ import { Paginator } from 'common/components/Paginator';
 import { basePath } from 'common/config/env.config';
 import { IWord } from 'common/interfaces/interfaces';
 import { Presentation } from 'common/components/Presentation';
+import { useLoaderBgImage } from 'common/hooks/useLoaderBgImage';
 
 interface IComponentProps {
   words: IWord[];
@@ -23,10 +24,14 @@ export const Words: React.FC<IComponentProps> = (props) => {
     new Audio(`${basePath}/${word.audioMeaning}`),
     new Audio(`${basePath}/${word.audioExample}`),
   ]);
+  const src = `${basePath}/${word.image}`;
+  const [loadImg, setLoadIMg] = useLoaderBgImage(src);
+
   const pageSize = content === 'textbook' ? 30 : totalCount ? Math.ceil(totalCount / 20) : 1;
   const bg = `bg-${group}`;
 
   const changeWord = (wd: IWord) => {
+    setLoadIMg(null);
     setWord(wd);
     setAudio([
       new Audio(`${basePath}/${wd.audio}`),
@@ -52,6 +57,7 @@ export const Words: React.FC<IComponentProps> = (props) => {
           <Paginator currentPage={page} totalCount={words.length * pageSize} pageSize={words.length} onPageChange={setPage} />
         </div>
         <Presentation
+          loaderImg={loadImg}
           group={group}
           word={word}
           isVisibleTranslation={isVisibleTranslation}
